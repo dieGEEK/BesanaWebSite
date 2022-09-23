@@ -1,0 +1,77 @@
+{
+    "Navbar": {
+        "Home": "Home",
+        "Products": "Products",
+        "Company": "Company",
+        "About": "About",
+        "Opportunity": "Opportunity",
+        "MyAccount": "My Account",
+        "JoinUs": "Join us"
+    },
+
+    "Gallery": {
+        "Title": "Ours Products",
+        "SubTitleBeauty": "Your skin has memory. Ten, twenty, thirty years from now, your skin will show the results of how it was treated today. Treat her with respect and gentleness, treat her with, ",
+        "SubTitleHealth": "It is essential to prioritize our health and define actions that help keep us healthy, both mentally and physically, take action and learn about our products.",
+        "ReceivePoints": "Points",
+        "Details": "Details",
+        "AddCart": "Add to cart"
+    },
+
+    "Promotion": {
+        "TitleBesanaBeauty": "BESANA BEAUTY PACK",
+        "TextBesanaBeauty": "Start taking care of your skin",
+        "TextComplementaryBesanaBeauty": "and delays the first signs of aging.",
+        "Text2": "Off",
+        "Description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper mauris rhoncus mus.",
+        "Button": "Shop now"
+    },
+
+    "Publicity":{
+        "Title": "ANTI-AGING PACK",
+        "Subtitle": "Day and Night cream",
+        "FirstProduct": "for the day",
+        "SecondProduct": "for the night",
+        "DescriptionFirstProduct": "Moisturizes, Treats and Protects your skin without greasy feeling. Perfect under your makeup or anytime.",
+        "DescriptionSecondProduct": "Wake up with softer, renewed and hydrated skin. Your friends will want to know your secret.",
+        "Button": "Shop now"
+    },
+
+    "Details":{
+        "Desc": "This organically grown Broad-Spectrum CBG THC FREE. (Cannabigerol Mother of all Cannabinoids) hemp oil made in the USA, has been magically blended with CBD, CBC, CBN and refreshing vitamin C orange flavor to safely produce an “entourage effect” without any side effects. At Besana Global we bring you more.....",
+        "Benefits": "BENEFITS",
+        "Benefit1": "Appetite control.",
+        "Benefit2": "Antibacterial.",
+        "Benefit3": "Improves mental alertness.",
+        "Benefit4": "IBD (Inflammatory Bowel Desease) Reinforces the endocannabinoid system.",
+        "Category": "Category",
+        "Button": "Add to Cart"
+    },
+
+    "Company": {
+        "AboutUs":"About Us...",
+        "Description": "We are a company that seeks to improve the quality of life of people both physically and economically, we are committed to each of our members through the work and experience of professionals in the network marketing industry who are responsible for reinforcing your knowledge and providing you with materials and tools you need for goals, objectives and the desired lifestyle. We are working in different cities of the country, ready to act where they need us."
+    },
+
+    "Footer": {
+        "FindUs": "Find Us Here:",
+        "Payments": "Payments Methods:",
+        "Company": "Company",
+        "AboutUs": "About Us",
+        "Categories": "Categories",
+        "Shop": "Shop",
+        "MakeUp": "Make up",
+        "Perfume": "Perfume",
+        "Nails": "Nails",
+        "SkinCare": "Skin care",
+        "HairCare": "Hair care",
+        "Careers": "Careers",
+        "PrivacyPolicy": "Privacy policy",
+        "TermsOfUse": " Terms of use",
+        "Support": "Support",
+        "ShippingDetails": "Shipping details",
+        "Information": "Information",
+        "Contact": "Contact",
+        "Rights": "All rights reserved"
+    }
+} 

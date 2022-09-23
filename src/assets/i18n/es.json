@@ -1,0 +1,78 @@
+{
+    "Navbar": {
+        "Home": "Inicio",
+        "Products": "Productos",
+        "Company": "Compañía",
+        "About": "Sobre nosotros",
+        "Opportunity": "Oportunidad",
+        "MyAccount": "Mi cuenta",
+        "JoinUs": "Unirse"
+    },
+
+    "Gallery": {
+        "Title": "Nuestros Productos",
+        "SubTitleBeauty": "Tu piel tiene memoria. En diez, veinte, treinta años a partir de ahora, tu piel mostrará los resultados de cómo fue tratada hoy. Tratala con respeto y suavidad trátala con,  ",
+        "SubTitleHealth": "Es fundamental priorizar nuestra salud y definir acciones que contribuyan a mantenernos saludables, tanto en el aspecto mental como físico, toma acción y conoce nuestros productos.",
+        "ReceivePoints": "Puntos a recibir",
+        "Details": "Detalles",
+        "AddCart": "Agregar al carrito"
+    },
+    
+    "Promotion": {
+        "TitleBesanaBeauty": "PAQUETE BESANA BEAUTY",
+        "TextBesanaBeauty": "Empieza a cuidar tu piel",
+        "TextComplementaryBesanaBeauty": "y retrasa los primeros signos de envejecimiento.",
+        "Text2": "Off",
+        "Description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper mauris rhoncus mus.",
+        "Button": "Comprar ahora"
+    },
+
+    "Publicity":{
+        "Title": "PAQUETE ANTI-AGING",
+        "Subtitle": "Day and Night cream",
+        "FirstProduct": "Para el día",
+        "SecondProduct": "Para la noche",
+        "DescriptionFirstProduct": "Hidrata, Trata y Protege tu piel sin sensación grasosa. Perfecto debajo de tu maquillaje o cualquier momento.",
+        "DescriptionSecondProduct": "Despierta con una piel más suave, renovada e hidratada. Tus amigos querrán saber tu secreto.",
+        "Button": "Comprar ahora"
+    },
+    
+    "Details":{
+        "Desc": "Este aceite de amplio espectro cultivado y fabricado en Estados Unidos, con prácticas de agricultura orgánica y 100% libre de THC, Cuenta con una magnífica combinación entre CBD,CBG,CBN,CBC además nuestro saborizante a naranja producen el “efecto séquito” potenciando así su acción sin aumentar el riesgo de sufrir efectos secundarios por su consumo.        Recuerda que en Besana global siempre damos más.",
+        "Benefits": "BENEFICIOS",
+        "Benefit1": "Control del dolor.",
+        "Benefit2": "Refuerza tu sistema inmunológico.",
+        "Benefit3": "Agudeza mental.",
+        "Benefit4": "Salud general en tu sistema endocannabinoide.",
+        "Category": "Categoria",
+        "Button": "Añadir al Carrito"
+    },
+
+    "Company": {
+        "AboutUs":"Quiénes somos...",
+        "Description": "Somos una compañía que busca mejorar la calidad de vida de las personas tanto física como económicas, estamos comprometidos con cada uno de nuestros miembros a través del trabajo y experiencia de profesionales en la industria de mercadeo en red quienes se encargan de reforzar tu conocimiento y proveerte materiales y herramientas que necesitas para metas, objetivos y el estilo de vida deseado. Estamos trabajando en diferentes ciudades del país, dispuestos a actuar donde nos necesiten."
+    },
+
+    "Footer": {
+        "FindUs": "Encuentranos En:",
+        "Payments": "Metodos de Pago:",
+        "Company": "Compañía",
+        "AboutUs": "Nosotros",
+        "Categories": "Categorias",
+        "Shop": "Comprar",
+        "MakeUp": "Maquillaje",
+        "Perfume": "Perfumes",
+        "Nails": "Uñas",
+        "SkinCare": "Cuidado de la Piel",
+        "HairCare": "Cuidado del Cabello",
+        "Careers": "Carreras",
+        "PrivacyPolicy": "Política de Privacidad",
+        "TermsOfUse": " Terminos de Uso",
+        "Support": "Soporte",
+        "ShippingDetails": "Detalles de Envíos",
+        "Information": "Información",
+        "Contact": "Contacto",
+        "Rights": "Todos los derechos reservados"
+    }
+
+}
