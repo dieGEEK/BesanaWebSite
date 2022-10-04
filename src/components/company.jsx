@@ -1,16 +1,17 @@
 import { Navigation } from "./navigation";
 import { useTranslation } from 'react-i18next';
+import "../styles/company.css";
 
 export const Company = (data) => {
   const { t, i18n } = useTranslation();
   return (
     <>
       <Navigation style={{ backgroundColor: "#ffffff" }}/>
-      <div id="company" style={{ paddingTop: 160, backgroundColor: "#ffffff", width: '100%' }}>
+      <div id="company">
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-md-12">
-              <div style={{ padding: 20 }} >
+              <div className="company_header">
                 <h2 className="typewriter-text allegoryFont" style={{ color: 'black', textShadow: 'none' }}>{t("Company.AboutUs")}</h2>
                 <hr class="social-line"/>
                 <h3 style={{ fontSize: 17 }}>{t("Company.Description")}</h3>

@@ -1,0 +1,9 @@
+div#company {
+    padding-top: 160px;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+div.company_header {
+    padding: 20px;
+}
