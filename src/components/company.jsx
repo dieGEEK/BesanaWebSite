@@ -22,7 +22,7 @@ export const Company = (data) => {
         <div class="box a1">
           <div class="image">
             <div class="text-accordion">
-              <h2>Visión</h2>
+              <h2>{t("Company.VisionTitle")}</h2>
               <p>
                 Convertirnos en una empresa líder dentro de la industria,
                 además brindar a nuestros socios y clientes productos innovadores

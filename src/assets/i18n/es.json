@@ -50,7 +50,8 @@
 
     "Company": {
         "AboutUs":"Quiénes somos...",
-        "Description": "Somos una compañía que busca mejorar la calidad de vida de las personas tanto física como económicas, estamos comprometidos con cada uno de nuestros miembros a través del trabajo y experiencia de profesionales en la industria de mercadeo en red quienes se encargan de reforzar tu conocimiento y proveerte materiales y herramientas que necesitas para metas, objetivos y el estilo de vida deseado. Estamos trabajando en diferentes ciudades del país, dispuestos a actuar donde nos necesiten."
+        "Description": "Somos una compañía que busca mejorar la calidad de vida de las personas tanto física como económicas, estamos comprometidos con cada uno de nuestros miembros a través del trabajo y experiencia de profesionales en la industria de mercadeo en red quienes se encargan de reforzar tu conocimiento y proveerte materiales y herramientas que necesitas para metas, objetivos y el estilo de vida deseado. Estamos trabajando en diferentes ciudades del país, dispuestos a actuar donde nos necesiten.",
+        "VisionTitle": "Visión"
     },
 
     "Footer": {
