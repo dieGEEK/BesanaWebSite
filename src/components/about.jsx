@@ -1,6 +1,3 @@
-import "../styles/about.css";
-
-
 export const About = (props) => {
   return (
     <div id='about' className='text-center'>
