@@ -2,6 +2,7 @@ import Grid from '@mui/material/Grid';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from "react-redux";
 import { addToCart } from "../actions/shoppingAction";
+import "../styles/promotion.css"
 
 export const Promotion = (props) => {
     const { t, i18n } = useTranslation();
@@ -20,11 +21,11 @@ export const Promotion = (props) => {
             />{" "}
           </Grid>
           <Grid item xs={12} lg={6} style={{ background: "white" }}>
-            <div style={{ marginLeft: "100px" }}>
+            <div id="content-promotion">
               <Grid item xs={12} lg={12} style={{ paddingTop: 30 }}>
-                <h2 style={{ fontSize: 45, color: "#ce7a55" }} class="allegoryFont">
+                <h>
                   {t("Promotion.TitleBesanaBeauty")}
-                </h2>
+                </h>
               </Grid>
               <Grid
                 item
@@ -32,19 +33,14 @@ export const Promotion = (props) => {
                 lg={12}
                 style={{ paddingTop: 40, paddingBottom: 50 }}
               >
-                <h style={{ fontSize: 35, color: "black" }}>
+                <h2>
                   {t("Promotion.TextBesanaBeauty")}
-                </h>
-                <h style={{ fontSize: 35, color: "#716c6a" }}>
+               
                   {" "}
                   {t("Promotion.TextComplementaryBesanaBeauty")}
-                </h>
+                </h2>
               </Grid>
-              {/* <Grid item xs={12} lg={12} style={{ padding: 30 }}>
-                                <h style={{ fontFafamily: 'Georgia, Cambria, Times', fontSize: '20', color: '#000' }}>
-                                    "{t('Promotion.Description')}"
-                                </h>
-                            </Grid> */}
+
               <Grid item xs={12} lg={12} style={{ paddingTop: 30 }}>
                 <input
                   type="button"

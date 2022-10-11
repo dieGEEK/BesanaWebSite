@@ -3,6 +3,7 @@ import { Image } from "./image";
 import { useState, useEffect } from "react"
 import { useTranslation } from 'react-i18next';
 import getSymbolFromCurrency from 'currency-symbol-map'
+import "../styles/gallery.css"
 
 export const Gallery = (props) => {
 
@@ -36,19 +37,18 @@ export const Gallery = (props) => {
       <div className="text-center">
         <div className="container">
           <div className="section-title">
-            <h2 className="title-section-home allegoryFont">{t("Gallery.Title")}</h2>
 
             <p
-              className="menu-link-without-background-beauty allegoryFont"
+              className="menu-link-without-background-beauty"
               style={{ margin: isSmallDevice ? "35px" : "35px 350px" }}
             >
               Besana Beauty
             </p>
             <div className="row">
-              <a>{t("Gallery.SubTitleBeauty")}</a><a class="allegoryFont">BESANA BEAUTY.</a>
+              <a>{t("Gallery.SubTitleBeauty")}</a><a style={{ fontWeight: 'bold' }}>BESANA BEAUTY.</a>
             </div>
           </div>
-          <div className="row container-besanabauty" >
+          <div className="row" >
             <div className="portfolio-items">
               {beautyList
                 ? beautyList.map((d, i) => (
@@ -74,7 +74,7 @@ export const Gallery = (props) => {
           </div>
           <div className="section-title">
             <p
-              className="menu-link-without-background-health allegoryFont"
+              className="menu-link-without-background-beauty"
               style={{ margin: isSmallDevice ? "105px 35px 35px 35px" : "35px 350px" }}
             >
               Besana Health

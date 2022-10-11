@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import { MdLocationOn, MdPhoneEnabled } from "react-icons/md"
 import { FaEnvelope } from "react-icons/fa"
 import { useTranslation } from 'react-i18next';
+import "../styles/footer.css";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -20,12 +21,12 @@ export const Footer = (props) => {
     const isSmallDevice = window.innerWidth < 650;
     const { t, i18n } = useTranslation();
     return (
-      <div>
+      <div id="footer">
         <div id="contact">
-          <div className="container" style={{ padding: "50px 0px" }}>
+          <div className="container" >
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={3} style={{ textAlign: "center" }}>
-                <Grid item sx={3} lg={3} style={{ textAlign: "left" }}>
+                <Grid item sx={3} lg={3}>
                   <p>{t("Footer.FindUs")}</p>
                   <br />
                   <a href="" className="social-icons">
@@ -78,24 +79,24 @@ export const Footer = (props) => {
                         {t("Footer.Shop")}
                       </h4>
                     </Grid>
-                    <Grid item sx={3} lg={3}>
+                    <Grid item sx={3} lg={3} style={{ paddingLeft: "15px" }}>
                       <h3>{t("Footer.Shop")}</h3>
                       <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span>Besana Beauty
+                        <span class="nav-arrow fa fa-angle-right"> </span> Besana Beauty
                       </h4>
                       <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span>Besana Health
+                        <span class="nav-arrow fa fa-angle-right"> </span> Besana Health
                       </h4>
                     </Grid>
-                    <Grid item sx={3} lg={3}>
-                      <h3>Oportunidad</h3>
+                    <Grid item sx={3} lg={3} style={{ paddingLeft: "15px" }}>
+                      <h3>{t("Footer.Opportunity")}</h3>
                       <div alignContent="left">
                       <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span>6 formas de generar ingresos
+                        <span class="nav-arrow fa fa-angle-right"> </span> {t("Footer.PaymentsOpportunity")}
                       </h4>
                       </div>
                     </Grid>
-                    <Grid item sx={3} lg={3}>
+                    <Grid item sx={3} lg={3} style={{ paddingLeft: "15px" }}>
                       <h3>{t("Footer.Contact")}</h3>
                       <h4>
                         {" "}

@@ -5,13 +5,13 @@
         "Company": "Compañía",
         "About": "Sobre nosotros",
         "Opportunity": "Oportunidad",
-        "MyAccount": "Mi cuenta",
+        "MyAccount": "Inicio de sesión",
         "JoinUs": "Unirse"
     },
 
     "Gallery": {
         "Title": "Nuestros Productos",
-        "SubTitleBeauty": "Tu piel tiene memoria. En diez, veinte, treinta años a partir de ahora, tu piel mostrará los resultados de cómo fue tratada hoy. Tratala con respeto y suavidad trátala con,  ",
+        "SubTitleBeauty": "Tu piel tiene memoria, en diez, veinte, treinta años a partir de ahora, tu piel mostrará los resultados de cómo fue tratada hoy tratala con respeto y suavidad trátala con  ",
         "SubTitleHealth": "Es fundamental priorizar nuestra salud y definir acciones que contribuyan a mantenernos saludables, tanto en el aspecto mental como físico, toma acción y conoce nuestros productos.",
         "ReceivePoints": "Puntos a recibir",
         "Details": "Detalles",
@@ -19,20 +19,18 @@
     },
     
     "Promotion": {
-        "TitleBesanaBeauty": "PAQUETE BESANA BEAUTY",
+        "TitleBesanaBeauty": "Paquete Besana Beauty",
         "TextBesanaBeauty": "Empieza a cuidar tu piel",
         "TextComplementaryBesanaBeauty": "y retrasa los primeros signos de envejecimiento.",
-        "Text2": "Off",
-        "Description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper mauris rhoncus mus.",
         "Button": "Comprar ahora"
     },
 
     "Publicity":{
-        "Title": "PAQUETE ANTI-AGING",
-        "Subtitle": "Day and Night cream",
+        "Title": "Paquete Anti-Aging",
+        "Subtitle": "Crema para día y noche",
         "FirstProduct": "Para el día",
         "SecondProduct": "Para la noche",
-        "DescriptionFirstProduct": "Hidrata, Trata y Protege tu piel sin sensación grasosa. Perfecto debajo de tu maquillaje o cualquier momento.",
+        "DescriptionFirstProduct": "Hidrata, trata y protege tu piel sin sensación grasosa. Perfecto debajo de tu maquillaje o cualquier momento.",
         "DescriptionSecondProduct": "Despierta con una piel más suave, renovada e hidratada. Tus amigos querrán saber tu secreto.",
         "Button": "Comprar ahora"
     },
@@ -51,7 +49,9 @@
     "Company": {
         "AboutUs":"Quiénes somos...",
         "Description": "Somos una compañía que busca mejorar la calidad de vida de las personas tanto física como económicas, estamos comprometidos con cada uno de nuestros miembros a través del trabajo y experiencia de profesionales en la industria de mercadeo en red quienes se encargan de reforzar tu conocimiento y proveerte materiales y herramientas que necesitas para metas, objetivos y el estilo de vida deseado. Estamos trabajando en diferentes ciudades del país, dispuestos a actuar donde nos necesiten.",
-        "VisionTitle": "Visión"
+        "VisionTitle": "Visión",
+        "MisionTitle": "Misión",
+        "PhilosophyTitle": "Filosofía"
     },
 
     "Footer": {
@@ -61,6 +61,8 @@
         "AboutUs": "Nosotros",
         "Categories": "Categorias",
         "Shop": "Comprar",
+        "Opportunity": "Oportunidad",
+        "PaymentsOpportunity": "6 formas de generar ingresos",
         "MakeUp": "Maquillaje",
         "Perfume": "Perfumes",
         "Nails": "Uñas",

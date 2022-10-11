@@ -1,4 +1,7 @@
 import { Navigation } from "./navigation";
+import { Promotion } from "./promotion";
+import { Publicity } from "./screenImage";
+import { Footer } from "./footer";
 import { useTranslation } from 'react-i18next';
 import "../styles/company.css";
 
@@ -12,9 +15,9 @@ export const Company = (data) => {
           <div className="row">
             <div className="col-xs-12 col-md-12">
               <div className="company_header">
-                <h2 className="typewriter-text allegoryFont" style={{ color: 'black', textShadow: 'none' }}>{t("Company.AboutUs")}</h2>
+                <h2 className="typewriter-text" style={{ color: 'black', textShadow: 'none' }}>{t("Company.AboutUs")}</h2>
                 <hr class="social-line"/>
-                <h3 style={{ fontSize: 17 }}>{t("Company.Description")}</h3>
+                <h3 >{t("Company.Description")}</h3>
               </div>
             </div>
           </div>
@@ -35,7 +38,7 @@ export const Company = (data) => {
         <div class="box a3">
           <div class="image_3">
             <div class="text-accordion">
-              <h2>Misión</h2>
+              <h2>{t("Company.MisionTitle")}</h2>
               <p>
              
               </p>
@@ -45,7 +48,7 @@ export const Company = (data) => {
         <div class="box a4">
           <div class="image_4">
             <div class="text-accordion">
-              <h2>Filosofía</h2>
+              <h2>{t("Company.PhilosophyTitle")}</h2>
               <p>
               
               </p>
@@ -54,6 +57,10 @@ export const Company = (data) => {
         </div>
       </div>
       </div>
+      <Promotion data={data.Promotion} />
+      <Publicity data={data.Publicity} />
+      <Footer data={data.Contact} />
     </>
+    
   );
 };

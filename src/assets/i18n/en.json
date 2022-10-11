@@ -5,7 +5,7 @@
         "Company": "Company",
         "About": "About",
         "Opportunity": "Opportunity",
-        "MyAccount": "My Account",
+        "MyAccount": "Log In",
         "JoinUs": "Join us"
     },
 
@@ -19,16 +19,14 @@
     },
 
     "Promotion": {
-        "TitleBesanaBeauty": "BESANA BEAUTY PACK",
+        "TitleBesanaBeauty": "Besana Beaty Pack",
         "TextBesanaBeauty": "Start taking care of your skin",
         "TextComplementaryBesanaBeauty": "and delays the first signs of aging.",
-        "Text2": "Off",
-        "Description": "Lorem ipsum dolor sit amet consectetur adipiscing elit semper mauris rhoncus mus.",
         "Button": "Shop now"
     },
 
     "Publicity":{
-        "Title": "ANTI-AGING PACK",
+        "Title": "Anti-Aging Pack",
         "Subtitle": "Day and Night cream",
         "FirstProduct": "for the day",
         "SecondProduct": "for the night",
@@ -51,7 +49,9 @@
     "Company": {
         "AboutUs":"About Us...",
         "Description": "We are a company that seeks to improve the quality of life of people both physically and economically, we are committed to each of our members through the work and experience of professionals in the network marketing industry who are responsible for reinforcing your knowledge and providing you with materials and tools you need for goals, objectives and the desired lifestyle. We are working in different cities of the country, ready to act where they need us.",
-        "VisionTitle": "Our Vision"
+        "VisionTitle": "Our Vision",
+        "MisionTitle": "Mision",
+        "PhilosophyTitle": "Philosophy"
     },
 
     "Footer": {
@@ -61,6 +61,8 @@
         "AboutUs": "About Us",
         "Categories": "Categories",
         "Shop": "Shop",
+        "Opportunity": "Opportunity",
+        "PaymentsOpportunity": "6 ways to generate income",
         "MakeUp": "Make up",
         "Perfume": "Perfume",
         "Nails": "Nails",

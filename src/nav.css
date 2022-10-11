@@ -1,37 +1,43 @@
-.dropbtn {
-    background-color: #000000eb;
-    color: white;
-    font-size: 16px;
-    width: 100%;
-    border: none;
-    border-radius: 7px;
-    padding: 5px 15px;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+
+@media (max-width: 768px) {
+  #company img {
+    margin: 50px 0;
   }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
+}
+
+.typewriter-text {
+  overflow: hidden;
+  position: relative;
+  width: 18em;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 38px;
+  white-space: nowrap;
+
+  animation: typewriter 2.5s steps(24) 1s 1 normal both,
+  blinkTextCursor 1500ms steps(44) infinite normal;
+
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
   }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    border-radius: 7px;
-    background-color: #000000eb;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+
+  to {
+    width: 9em;
   }
-  
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+}
+
+@keyframes blinkTextCursor {
+
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
   }
-  
-  .dropdown-content a:hover {background-color: #1d1d1deb; border-radius: 7px; color: #ffffff}
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: #1d1d1deb;}
+
+  to {
+    border-right-color: transparent;
+  }
+}

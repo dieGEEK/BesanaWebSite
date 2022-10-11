@@ -1,6 +1,9 @@
+//Archivo de header para seleccion de lenguaje
+
+
 import * as React from 'react';
 import { useState } from 'react';
-import "../../../nav.css";
+import "../../../styles/navigation_len.css";
 
 
 const Select = ({ label, optionsList, onSelect }) => {

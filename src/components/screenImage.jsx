@@ -2,6 +2,7 @@ import Grid from '@mui/material/Grid';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from "react-redux";
 import { addToCart } from "../actions/shoppingAction";
+import "../styles/promotion.css"
 
 export const Publicity = (props) => {
   const isSmallDevice = window.innerWidth < 650;
@@ -11,7 +12,7 @@ export const Publicity = (props) => {
     dispatch(addToCart('a3661371-34ec-4192-bf2c-0e92489f1d52'));
   };
   return (
-    <div id="publicity" style={{ paddingTop: isSmallDevice && 40, background: "white" }}>
+    <div id="publicity">
       <span></span>
 
       <Grid container>
@@ -25,74 +26,68 @@ export const Publicity = (props) => {
           </Grid>
         )}
         <Grid item xs={12} lg={6}>
-          <div style={{ marginLeft: "100px" }}>
-            <Grid item xs={12} lg={12} style={{ padding: 30 }}>
-              <h2 style={{ fontSize: "45", color: "#ce7a55" }} class="allegoryFont">
+          <div style={{ marginLeft: "100px", marginTop: "40px" }}>
+            <Grid item xs={12} lg={12}>
+              <h>
                 {t("Publicity.Title")}
-              </h2>
-              <h2 style={{ fontSize: "45", color: "#ce7a55" }} class="allegoryFont">
-                {t("Publicity.Subtitle")}
-              </h2>
-            </Grid>
-            <Grid item xs={12} lg={12} style={{ paddingLeft: 30 }}>
-              <h style={{ fontSize: 35, color: "black" }}>
-                {t("Publicity.FirstProduct")}
               </h>
+              <h>
+                {t("Publicity.Subtitle")}
+              </h>
+            </Grid>
+            <Grid item xs={12} lg={12}>
+              <h2>
+                {t("Publicity.FirstProduct")}
+              </h2>
             </Grid>
             <Grid
               item
               xs={12}
               lg={12}
-              style={{ paddingTop: 10, paddingLeft: 30 }}
             >
-              <h style={{ fontSize: 15, color: "black", fontWeight: 700 }}>
+              <h3>
                 {t("Publicity.DescriptionFirstProduct").replace(
                   "tu piel sin sensación grasosa. Perfecto debajo de tu maquillaje o cualquier momento.",
                   ""
                 )}
-              </h>
-              <h style={{ fontSize: 15, color: "#716C6A" }}>
+
                 {t("Publicity.DescriptionFirstProduct").replace(
                   "Hidrata, Trata y Protege",
                   ""
                 )}
-              </h>
+              </h3>
             </Grid>
             <Grid
               item
               xs={12}
               lg={12}
-              style={{ paddingTop: 10, paddingLeft: 30 }}
             >
-              <h style={{ fontSize: 35, color: "black" }}>
+              <h2>
                 {t("Publicity.SecondProduct")}
-              </h>
+              </h2>
             </Grid>
             <Grid
               item
               xs={12}
               lg={12}
-              style={{ paddingTop: 10, paddingLeft: 30 }}
             >
-              <h style={{ fontSize: 15, color: "#716C6A" }}>
+              <h3>
                 {t("Publicity.DescriptionSecondProduct").replace(
                   "más suave, renovada e hidratada. Tus amigos querrán saber tu secreto.",
                   ""
                 )}
-              </h>
-              <h style={{ fontSize: 15, color: "black", fontWeight: 700 }}>
+
                 {t("Publicity.DescriptionSecondProduct")
                   .replace("Despierta con una piel ", "")
                   .replace("Tus amigos querrán saber tu secreto.", "")}
-              </h>
-              <h style={{ fontSize: 15, color: "#716C6A" }}>
+
                 {t("Publicity.DescriptionSecondProduct").replace(
                   "Despierta con una piel más suave, renovada e hidratada.",
                   ""
                 )}
-              </h>
+              </h3>
             </Grid>
-            <Grid item xs={12} lg={12} style={{ padding: 30 }}>
+            <Grid item xs={12} lg={12}>
               <input
                 type="button"
                 class="button"

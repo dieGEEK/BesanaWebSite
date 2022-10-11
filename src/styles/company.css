@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,300');
+@import url('https://fonts.googleapis.com/css?family=Asap');
+
 div#company {
     padding-top: 160px;
     background-color: #ffffff;
@@ -7,3 +11,240 @@ div#company {
 div.company_header {
     padding: 20px;
 }
+
+#company h3 {
+    line-height: 24px;
+    font-size: 20px;
+    text-align: justify;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+  #company h2 {
+    color: white;
+    text-shadow: 2px 2px #000000;
+    position: relative;
+    font-size: 65px;
+    font-family: 'Asap';
+  }
+
+  #company p {
+    font-family: 'Asap';
+    font-size: 20px;
+  }
+
+  #company .company-text li {
+    margin-bottom: 6px;
+    margin-left: 6px;
+    list-style: none;
+    padding: 0;
+  }
+
+  #company .company-text li:before {
+    content: "\f00c";
+    font-family: 'Asap';
+    color: #5ca9fb;
+    font-size: 11px;
+    font-weight: 300;
+    padding-right: 8px;
+  }
+
+  #company img {
+    width: 520px;
+    margin-top: 10px;
+    border-right: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+  }
+  
+  #company .img-aboutUS {
+    clip-path: polygon(58% 0, 100% 0, 100% 100%, 75% 100%, 0 100%, 33% 44%);
+    border-radius: 0px;
+    z-index: 1;
+    width: 100%;  
+    height: 490px;
+  }
+  
+  #company .social-line {
+    background: linear-gradient(to right, #02ade7e3 0%, #91d010 100%);
+    width: 42%;
+  }
+  #company .container {
+    padding-left: 35px;
+    width: 100%;
+    /* background: linear-gradient(-40deg, black, #00171f 54%, white 55%, white); */
+  }
+  #company .first-container {
+    width: 100%;
+    height: 500px;
+  }
+
+  @media (max-width: 768px) {
+    #company img {
+      margin: 50px 0;
+    }
+  }
+  
+  .typewriter-text {
+    overflow: hidden;
+    position: relative;
+    width: 18em;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 38px;
+    white-space: nowrap;
+  
+    animation: typewriter 2.5s steps(24) 1s 1 normal both,
+    blinkTextCursor 1500ms steps(44) infinite normal;
+  
+  }
+  
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 9em;
+    }
+  }
+  
+  @keyframes blinkTextCursor {
+  
+    from {
+      border-right-color: rgba(0, 0, 0, 0.75);
+    }
+  
+    to {
+      border-right-color: transparent;
+    }
+  }  
+  
+ .accordion {
+    background: rgba (0,0,0, 0.10);
+    height:350px;
+    display:flex;
+    box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+    flex-direction: row;
+    cursor:pointer;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 100px;
+  }
+  
+.box {
+    position:relative;
+    height:100%;
+    flex:1;
+    background-position:left;
+    background-size:cover;
+    transition: .7s;
+    box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+  }
+
+  .box:hover {
+    flex:7;
+    height:350px;
+  }
+
+  .a1 {
+    background-image: url(../img/Company/Vision.png);
+  }
+  
+  .a3 {
+    background-image: url(../img/Company/Mision.png)
+  }
+  
+  .a4 {
+    background-image: url(../img/Company/Filosofia.png)
+  }
+  
+  .text-accordion {
+    text-align: left;
+    background-color: #ffffff00;
+    color:black;
+    bottom:0;
+    opacity:0;
+    padding: 50px 40px;
+  }
+
+  .box:hover .text-accordion {
+    opacity:1;
+  }
+
+  h1 {
+    width: 250px;
+    text-align:left;
+    margin:100px auto 20px auto;
+    font-family: 'Asap';
+  }
+  
+  @media screen and (max-width: 800px)
+  {
+    body {
+      margin:0;
+    }
+    
+    .accordion{
+      flex-direction: column;
+      height: 700px;
+      box-shadow:none;
+    }
+    
+    .box {
+      box-shadow:none;
+    }
+    
+    .box:hover {
+      flex:7;
+    }
+  }
+  
+  .typewriter-text-oportunity {
+    overflow: hidden;
+    position: relative;
+    width: 18em;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 38px;
+    white-space: nowrap;
+  
+    animation: typewriterOportunity 4s steps(44) 1s 1 normal both,
+    blinkTextCursorOportunity 500ms steps(44) infinite normal;
+  
+  }
+  
+  @keyframes typewriterOportunity {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 18em;
+    }
+  }
+  
+  @keyframes blinkTextCursorOportunity {
+  
+    from {
+      border-right-color: rgba(0, 0, 0, 0.75);
+    }
+  
+    to {
+      border-right-color: transparent;
+    }
+  
+  }
+
+  .bubbler-car{
+    height: 20px;
+    background-color: #0198ca;
+    width: 20px;
+    border-radius: 14px;
+    left: 40px;
+    top: 0px;
+    position: absolute;
+    transition: 0.3s all ease;
+    transform: scale(1);
+    animation: light 1.5s infinite alternate;
+    font-size: 15px;
+    padding-right: 6px;
+  }
+  
