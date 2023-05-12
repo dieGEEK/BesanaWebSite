@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+.details{
+  margin-top: 160px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding-bottom: 40px;
+}
+
+.detail-img{
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.detail-img img{
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.detail-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  font-family: 'Roboto';
+}
+
+.content-name{
+  text-align: center;
+  font-size: 40px;
+}
+
+.content-price{
+  text-align: center;
+  font-size: 30px;
+}
+
+.content-description{
+  text-align: justify;
+  padding-bottom: 20px;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.content-summary{
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.summary-list{
+  margin-left: 25px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.content-button{
+  text-align: center;
+  font-size: 30px;
+}
+
+.content-buy{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+@media screen and (max-width: 900px)
+  {
+    .details{
+      margin-top: 120px;
+      display: grid;
+      grid-template-columns: 1fr;
+      padding-bottom: 40px;
+    }
+    
+    .detail-img{
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .detail-img img{
+      max-width: 300px;
+      max-height: 300px;
+    }
+    
+    .detail-content{
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      font-family: 'Roboto';
+    }
+    
+    .content-name{
+      text-align: center;
+      font-size: 40px;
+    }
+    
+    .content-price{
+      text-align: center;
+      font-size: 30px;
+    }
+    
+    .content-description{
+      text-align: justify;
+      padding-bottom: 20px;
+      font-size: 15px;
+    }
+    
+    .content-button{
+      text-align: center;
+      font-size: 30px;
+    }
+    
+    .content-buy{
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }

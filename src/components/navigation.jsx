@@ -17,7 +17,8 @@ import Button from '@mui/material/Button';
 import {
   clearCart,
 } from "../actions/shoppingAction";
-import "../styles/navigation_op.css"
+import "../styles/navigation_op.css";
+import { Chat } from "./chat";
 
 
 const optionsList = [
@@ -30,7 +31,7 @@ const optionsList = [
 ]
 
 export const Navigation = (props) => {
-  const isSmallDevice = window.innerWidth < 650;
+  const isSmallDevice = window.innerWidth < 900;
   const [menuSmallDeviceVisible, setMenuSmallDeviceVisible] = useState(false);
   const { t, i18n } = useTranslation();
   const state = useSelector((state) => state);
@@ -56,56 +57,66 @@ export const Navigation = (props) => {
       className="navbar navbar-default navbar-fixed-top"
     >
       <div className="container" className="fisrt-div-nav-bar">
-        <Grid
-          container
-          xs={12}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-        >
-          <Grid
-            item
-            xs={1}
-            style={{
-              alignContent: "center",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          ></Grid>
-          <Grid item xs={1} style={{ marginRight: isSmallDevice ? 55 : 28 }}>
-            <Select
-              label={language}
-              optionsList={optionsList}
-              onSelect={handleSelection}
-            ></Select>
-          </Grid>
-        </Grid>
-        <div
-          className="container"
-          className="second-div-nav-bar"
-          style={{ display: isSmallDevice && "flex" }}
-        >
-          {window.innerWidth < 600 && (
+        <Grid container xs={16} style={{ display: "flex", justifyContent: "flex-end" }} >
+
+          <Grid item xs={1} style={{ marginRight: isSmallDevice ? 40 : 28 }}>
+          {window.innerWidth < 900 && (
             <>
               <img
                 src="img/LOGO BESANA.png"
                 style={{
-                  width: 110,
-                  height: 90,
-                  paddingBottom: 15,
+                  width: 95,
+                  height: 80,
+                  paddingBottom: 10,
                   marginLeft: 20,
                 }}
               />
-              <Button style={{ width: 40, height: "auto", marginLeft: 155 }} onClick={() => { setMenuSmallDeviceVisible(!menuSmallDeviceVisible) }} >
-                <img style={{ width: 40, height: "auto" }} src={BurguerMenu} />
-              </Button>
             </>
           )}
+          </Grid>
+          <Grid item xs={3} style={{
+            alignContent: "center",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            }}
+          ></Grid>
+            {window.innerWidth < 900 && (   
+              <Grid item xs={3} style={{ marginRight: isSmallDevice ? 20 : 0 }}>                 
+                <Select
+                  label={language}
+                  optionsList={optionsList}
+                  onSelect={handleSelection}
+                ></Select>
+              </Grid>                              
+            )}
+            {window.innerWidth < 900 && (   
+              <Grid item xs={2} style={{ marginRight: isSmallDevice ? 20 : 0 }}>
+                <Button style={{ width: 80, height: 80, marginBottom: 0 }} onClick={() => { setMenuSmallDeviceVisible(!menuSmallDeviceVisible) }} >
+                  <img style={{ width: 50, height: 50, marginRight: 0 }} src={BurguerMenu} />
+                </Button>
+              </Grid>                              
+            )}
+            {window.innerWidth >= 900 && (   
+              <Grid item xs={1} style={{ marginRight: isSmallDevice ? 20 : 0 }}>
+                <Select
+                  label={language}
+                  optionsList={optionsList}
+                  onSelect={handleSelection}
+                ></Select>
+              </Grid>           
+            )}
+        </Grid>
+        <div
+          className="second-div-nav-bar"
+          style={{ display: isSmallDevice && "flex" }}
+        >
           <Grid
             className="collapse navbar-collapse"
             id="bs-example-navbar-collapse-1"
           >
-            {window.innerWidth > 600 && (
+            {window.innerWidth > 900 && (
               <div
                 style={{
                   position: "absolute",
@@ -171,8 +182,8 @@ export const Navigation = (props) => {
                         <div className="bubbler-car">{cart?.length}</div>
                       )}
                       <ShoppingCartIcon
-                        sx={{ fontSize: 30, color: "#88b900" }}
-                      ></ShoppingCartIcon>
+                        sx={{ fontSize: 30, color: "#88b900"}}
+                    ></ShoppingCartIcon>
                     </>
                   </a>
                 </li>
@@ -181,15 +192,15 @@ export const Navigation = (props) => {
           </Grid>
         </div>
       </div>
+
       {menuSmallDeviceVisible &&
-        <div className="container" style={{ height: 210, backgroundColor: 'black' }}>
+        <div className="container" style={{ backgroundColor: 'white', paddingLeft: '40px'}}>
           <ul
             className="nav navbar-nav navbar-right"
             style={{
-              color: "#fff !important",
-              justifyContent: 'center',
+              color: "#000 !important",
               paddingTop: 24,
-              display: 'flex'
+              display: 'flex',
             }}
           >
             <li>
@@ -197,63 +208,32 @@ export const Navigation = (props) => {
                 {t("Navbar.Home")}
               </a>
             </li>
+            <li class="dropdown">
+              <a href="/#besanaBeauty" className="page-scroll">
+                {t("Navbar.Products")}
+              </a>              
+            </li>
             <li>
               <a href="/company" className="page-scroll">
                 {t("Navbar.Company")}
               </a>
             </li>
-
-            <li class="dropdown">
-              <a
-                href="#portfolio"
-                className="page-scroll"
-                style={{ textColor: "#fff !important" }}
-              >
-                {t("Navbar.Products")}
-              </a>
-              <ul class="dropdown-content" style={{ textAlign: "left" }}>
-                <li>
-                  <a className="page-scroll" href="#besanaBeauty">
-                    Besana Beauty
-                  </a>
-                </li>
-                <li>
-                  <a className="page-scroll" href="#besanaHealth">
-                    Besana Health
-                  </a>
-                </li>
-              </ul>
-            </li>
-            {
-              <li>
-                <a href={`/shoppingCar?sponsor=${!!sponsor ? sponsor : null}`}>
-                  <>
-                    {cart?.length > 0 && (
-                      <div className="bubbler-car">{cart?.length}</div>
-                    )}
-                    <ShoppingCartIcon
-                      sx={{ fontSize: 30, color: "#fff" }}
-                    ></ShoppingCartIcon>
-                  </>
-                </a>
-              </li>
-            }
-          </ul>
-
-          <ul
-            className="nav navbar-nav navbar-right"
-            style={{
-              color: "#fff !important",
-              justifyContent: 'center',
-              paddingTop: 24,
-              display: 'flex'
-            }}
-          >
             <li>
               <a href="/oportunity" className="page-scroll">
                 {t("Navbar.Opportunity")}
               </a>
             </li>
+          </ul>
+          <ul
+            className="nav navbar-nav navbar-right"
+            style={{
+              color: "#fff !important",
+              justifyContent: 'left',
+              paddingTop: 24,
+              display: 'flex'
+            }}
+          >
+{/* 
             <li>
               <a
                 className="menu-link-without-background"
@@ -265,8 +245,8 @@ export const Navigation = (props) => {
               </a>
               {/* <ReactTooltip id="registerTip" place="bottom" effect="solid">
                   Próximamente...
-                </ReactTooltip> */}
-            </li>
+                </ReactTooltip> 
+            </li> */}
             <li>
               <a
                 href="https://backoffice.besanaglobal.com/login"
@@ -283,10 +263,24 @@ export const Navigation = (props) => {
                 {t("Navbar.JoinUs")}
               </a>
             </li>
+            <li>
+                <a href={`/shoppingCar?sponsor=${!!sponsor ? sponsor : null}`}>
+                  <>
+                    {cart?.length > 0 && (
+                      <div className="bubbler-car">{cart?.length}</div>
+                    )}
+                    <ShoppingCartIcon
+                      sx={{ fontSize: 30, color: "#88b900"}}
+                    ></ShoppingCartIcon>
+                  </>
+                </a>
+              </li>
           </ul>
 
         </div>
+        
       }
+      <Chat />
     </nav>
 
     

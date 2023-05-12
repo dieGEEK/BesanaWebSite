@@ -66,30 +66,47 @@
   ],
   "Carousel": [
     {
-      "title": "Título imagen 1",
-      "smallImage": "img/carousel/Bienvenidos.png"
+      "title": "Wellcome",
+      "esImage": "img/carousel/Bienvenidos.png",
+      "enImage": "img/carousel/Wellcome.png"
     },
     {
-      "title": "Título imagen 2",
-      "smallImage": "img/carousel/Oportunidad.png"
+      "title": "Opportunity",
+      "esImage": "img/carousel/Oportunidad.png",
+      "enImage": "img/carousel/Oportunity.png"
     },
     {
-      "title": "Título imagen 7",
-      "smallImage": "img/carousel/Pilares.png"
+      "title": "Products",
+      "esImage": "img/carousel/Productos.png",
+      "enImage": "img/carousel/Product.png"
+    },
+    {
+      "title": "Pillars",
+      "esImage": "img/carousel/Pilares.png",
+      "enImage": "img/carousel/Pillars.png"
     }
+
   ],
   "CarouselSmallDevices": [
     {
-      "title": "Título imagen 1",
-      "smallImage": "img/carousel/Welcome.png"
+      "title": "Wellcome",
+      "esImage": "img/carousel/Bienvenidos_SD.png",
+      "enImage": "img/carousel/Wellcome_SD.png"
     },
     {
-      "title": "Título imagen 2",
-      "smallImage": "img/carousel/Oportunity.png"
+      "title": "Opportunity",
+      "esImage": "img/carousel/Oportunidad_SD.png",
+      "enImage": "img/carousel/Oportunity_SD.png"
     },
     {
-      "title": "Título imagen 7",
-      "smallImage": "img/carousel/Pillars.png"
+      "title": "Products",
+      "esImage": "img/carousel/Productos_SD.png",
+      "enImage": "img/carousel/Product_SD.png"
+    },
+    {
+      "title": "Pillars",
+      "esImage": "img/carousel/Pilares_SD.png",
+      "enImage": "img/carousel/Pillars_SD.png"
     }
   ],
   "Services": [

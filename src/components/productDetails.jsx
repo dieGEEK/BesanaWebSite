@@ -1,59 +1,104 @@
-import Grid from '@mui/material/Grid';
 import { useTranslation } from 'react-i18next';
+import "../styles/detail.css"
+import { useDispatch } from "react-redux";
+import { useState, useEffect  } from 'react';
+import * as React from 'react';
+import { Footer } from "./footer";
+import { Navigation } from "./navigation";
+import { addToCart } from "../actions/shoppingAction";
+import toast, { Toaster } from 'react-hot-toast';
+import useHook from '../pages/product/hook.js'
+import { useParams } from "react-router-dom";
+import axios from 'axios';
 
-export const ProductDetails = (props) => {
+
+export const ProductDetails = (props, data) => {
     const { t, i18n } = useTranslation();
+    const dispatch = useDispatch();
+    const handleClick = () => {
+        dispatch(addToCart(id));
+        toast.success(t("Gallery.AddSucces"));
+    };
+    let { id } = useParams();
+    const { product } = useHook(id)
+    const [productItem, setproductItem] = useState({});
+    const [descriptionItem, setdescription] = useState("");
+    useEffect(() => {
+        const item = product.find(pr => pr.id == id);
+
+        setdescription(item?.description);
+
+        setproductItem(item);
+    }, [product])
+
+    function translateDescription(){
+        // let len = desc.split("#").length;
+        // let DescripcionIngles = new Array();
+        // let cadena = desc.split('#');
+        // const newDescription = cadena;
+        // console.log(cadena);
+        // for (var i = 0; i < len - 1; i++) {
+        //   let data = {
+        //     q: cadena[i],
+        //     source: 'es',
+        //     target: 'en'
+        //   }
+        //   const respuesta = await (axios.post('https://libretranslate.org/translate', data))
+        //   DescripcionIngles[i] = respuesta.data.translatedText;
+        // }
+        
+        // if (i18n.language == 'en') {
+        //     return(DescripcionIngles);
+        // }
+        // else {
+        //     return(newDescription);
+        // }
+      }
     return (
-
-
-        <Grid container style={{ background: 'white', font: `"proxima-nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"` }} id="Details">
-            <Grid item xs={12} lg={8} id="productimage">
-                <img
-                    src="https://besanaglobal.com/wp-content/uploads/2021/01/producto-besanaglobal-cbg5hd-06_CBG5-1.png"
-                    className="img-responsive" alt=""
-                    style={{ height: '70%', display: 'block', margin: 'auto', marginTop: '100px' }}
-                />
-            </Grid>
-            <Grid item xs={12} lg={4} style={{ background: '#E0E0E0' }} >
-
-                <Grid item xs={12} lg={12} style={{ padding: 30 }}>
-
-                    <Grid container >
-                        <Grid item xs={6} lg={6} style={{ padding: 30 }}>
-                            <h style={{ fontFafamily: 'Georgia, Cambria, Times', fontSize: '40', color: 'black' }}>
-                                CBG5
-                            </h>
-                        </Grid>
-                        <Grid item xs={6} lg={6} style={{ padding: 30 }}>
-                            <h style={{ fontFafamily: 'Proxima Nova Bold,Helvetica,Arial,sans-serif', fontSize: '40', color: 'darkgreen' }}>
-                                $100,00
-                            </h>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} lg={12} style={{ padding: 30 }}>
-                    <h style={{ fontSize: '18', color: 'black' }}>
-                        {t('Details.Desc')}
-                    </h>
-                    <h1 style={{ fontSize: '20', color: 'darkgreen' }}>{t('Details.Benefits')}</h1>
-                    <h style={{ font: `'Raleway'`, fontSize: '15', color: 'black' }}>
-                        {t('Details.Benefit1')}<br />
-                        {t('Details.Benefit2')}<br />
-                        {t('Details.Benefit3')}<br />
-                        {t('Details.Benefit4')}<br />
-                    </h>
-                </Grid>
-                <Grid item xs={12} lg={12} style={{ padding: 30 }}>
-                    <input type="text" class="text" value="$100,00" />
-                    <input type="button" class="button" value={t('Details.Button')} />
-                </Grid>
-                <Grid item xs={12} lg={12} style={{ padding: 30 }}>
-                    <h style={{ fontFafamily: 'Georgia, Cambria, Times', fontSize: '20', color: 'darkgreen' }}>
-                        {t('Details.Category')} :
-                    </h><h> Besana Health</h>
-                </Grid>
-            </Grid>
-        </Grid>
-
+    <>
+    <Navigation style={{ backgroundColor: "#ffffff" }}/>
+    <div><Toaster/></div>
+    <div className="details">        
+        {}
+        <div className="detail-img">
+            <div></div>
+            <img
+                src={productItem?.img}              
+            />
+            <div></div>
+        </div>
+        <div className="detail-content">              
+            <div className="content-name">
+                <h>
+                    {productItem?.name}   
+                </h>
+            </div>
+            <div className='content-description'>
+                <h>
+                    {t("Details.Desc")} 
+                </h>
+                <details className='content-summary'>
+                    <summary>+ {t("Details.Ingredients")}</summary>
+                    <ul className='summary-list'>
+                        <li>{t("Details.Ingredient1")}</li>
+                        <li>{t("Details.Ingredient2")}</li>
+                        <li>{t("Details.Ingredient3")}</li>
+                    </ul>
+                </details>
+            </div>
+            <div className='content-buy'>
+                <div className="content-price">
+                        <h>
+                            $ {productItem?.parsedPrice}   
+                        </h>
+                    </div>
+                <div className='content-button'>
+                    <input type="button" onClick={handleClick} value={t('Details.Button')} />
+                </div>
+            </div>
+        </div>
+    </div>
+    <Footer data={data.Contact} />
+    </> 
     );
 };

@@ -80,7 +80,7 @@ const ConfirmPayment = () => {
             <div class="myContainer">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="rowConfirm">
-                  <div class="col-50">
+                  <div class="col-10">
                     <h3>Billing Address</h3>
                     <label for="fname">
                       Name:
@@ -214,9 +214,9 @@ const ConfirmPayment = () => {
                     <div className="acceptedCards">
                       <label for="fname">Accepted Cards</label>
                       <div class="icon-container">
-                        <i class="fa fa-cc-visa"></i>
-                        <i class="fa fa-cc-amex"></i>
-                        <i class="fa fa-cc-mastercard"></i>
+                        <i style={{ marginRight: "5px"}} class="fa fa-cc-visa"></i>
+                        <i style={{ marginRight: "5px"}} class="fa fa-cc-amex"></i>
+                        <i style={{ marginRight: "5px"}}class="fa fa-cc-mastercard"></i>
                         <i class="fa fa-cc-discover"></i>
                       </div>
                     </div>

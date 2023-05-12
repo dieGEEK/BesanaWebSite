@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Hind+Madurai&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,300');
-@import url('https://fonts.googleapis.com/css?family=Robot');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
 
 
@@ -9,22 +8,23 @@
     padding-top: 8px;
     padding-bottom: 3px;
     text-align: center;
-    font-family: 'Robot';
+    font-family: 'Roboto';
   }
 
  #contact p {
+   font-family: 'Roboto';
     color: #888;
     font-size: 14px;
-    font-family: 'Robot';
     text-align: left;
   }
 
   #footer a {
-    color: #608dfd;
+    color: #ffffff;
   }
 
   #footer a:hover {
     border-bottom: 2px solid #608dfd;
+    color: #88b900;
   }
 
   .social-icons {
@@ -48,5 +48,10 @@
     font-size: 36px !important;
     color: #e3b4b5;
   }
- 
+
+  h4{
+    font-family: 'Roboto';
+    font-weight: lighter;
+  }
+
  

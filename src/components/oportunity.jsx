@@ -1,12 +1,16 @@
 import { Navigation } from "./navigation";
+import { useTranslation } from 'react-i18next';
+import { Footer } from "./footer";
+import "../styles/oportunity.css";
 
 export const Oportunity = (props) => {
+  const { t, i18n } = useTranslation();
   return (
     <>
     <Navigation />
-    <div id='oportunity' style={{ backgroundColor: "#ffffff", marginTop: 65 }} >
+    <div id='oportunity'>
         <div align="center">
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <div className="col-xs-12 col-md-12">
               <div style={{ padding: 20 }} >
@@ -16,11 +20,14 @@ export const Oportunity = (props) => {
               </div>
             </div>
           </div>
-        </div>
-            <img src="img/Oportunity/GetMoney.png" style={{ marginTop: -310 }}/>
-            {/* <img src="https://besanaglobal.com/wp-content/uploads/2021/03/oportunity_Mesa-de-trabajo-1-1.png"  width="90%"/> */}
+        </div> */}
+            {/* <img src="img/Oportunity/GetMoney.png" style={{ marginTop: -310 }}/> */}
+            {
+              i18n.language == 'es' ? <img src="img/Oportunity/OPORTUNIDAD.jpg"/> : <img src="img/Oportunity/OPORTUNITY.jpg"/>   
+            }
         </div>
     </div>
+    <Footer props={props.Contact} />
     </>
   )
 }

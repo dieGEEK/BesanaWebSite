@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Hind+Madurai&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,300');
-@import url('https://fonts.googleapis.com/css?family=Asap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
-div#company {
+#company {
     padding-top: 160px;
     background-color: #ffffff;
     width: 100%;
 }
 
-div.company_header {
+.company_header {
     padding: 20px;
 }
 
@@ -20,17 +19,27 @@ div.company_header {
     margin-left: 30px;
 }
 
+#company h {
+  color: #4a610f ;
+  text-shadow: 2px 2px #000000;
+  position: relative;
+  font-size: 65px;
+  font-family: 'Roboto';
+}
+
   #company h2 {
-    color: white;
+    color: #fff;
     text-shadow: 2px 2px #000000;
     position: relative;
     font-size: 65px;
-    font-family: 'Asap';
+    font-family: 'Roboto';
   }
 
   #company p {
-    font-family: 'Asap';
-    font-size: 20px;
+    font-family: 'Roboto';
+    font-size: 23px;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
   }
 
   #company .company-text li {
@@ -42,7 +51,7 @@ div.company_header {
 
   #company .company-text li:before {
     content: "\f00c";
-    font-family: 'Asap';
+    font-family: 'Roboto';
     color: #5ca9fb;
     font-size: 11px;
     font-weight: 300;
@@ -54,14 +63,6 @@ div.company_header {
     margin-top: 10px;
     border-right: 0;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
-  }
-  
-  #company .img-aboutUS {
-    clip-path: polygon(58% 0, 100% 0, 100% 100%, 75% 100%, 0 100%, 33% 44%);
-    border-radius: 0px;
-    z-index: 1;
-    width: 100%;  
-    height: 490px;
   }
   
   #company .social-line {
@@ -77,46 +78,6 @@ div.company_header {
     width: 100%;
     height: 500px;
   }
-
-  @media (max-width: 768px) {
-    #company img {
-      margin: 50px 0;
-    }
-  }
-  
-  .typewriter-text {
-    overflow: hidden;
-    position: relative;
-    width: 18em;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
-    font-size: 38px;
-    white-space: nowrap;
-  
-    animation: typewriter 2.5s steps(24) 1s 1 normal both,
-    blinkTextCursor 1500ms steps(44) infinite normal;
-  
-  }
-  
-  @keyframes typewriter {
-    from {
-      width: 0;
-    }
-  
-    to {
-      width: 9em;
-    }
-  }
-  
-  @keyframes blinkTextCursor {
-  
-    from {
-      border-right-color: rgba(0, 0, 0, 0.75);
-    }
-  
-    to {
-      border-right-color: transparent;
-    }
-  }  
   
  .accordion {
     background: rgba (0,0,0, 0.10);
@@ -131,7 +92,7 @@ div.company_header {
   }
   
 .box {
-    position:relative;
+    position: relative;
     height:100%;
     flex:1;
     background-position:left;
@@ -146,24 +107,36 @@ div.company_header {
   }
 
   .a1 {
-    background-image: url(../img/Company/Vision.png);
+    background-image: url(../img/Company/Vision.jpg);
   }
   
   .a3 {
-    background-image: url(../img/Company/Mision.png)
+    background-image: url(../img/Company/Mision.jpg)
   }
   
   .a4 {
-    background-image: url(../img/Company/Filosofia.png)
+    background-image: url(../img/Company/Filosofia.jpg);
+  }
+
+  .a1:hover {
+    background-image: url(../img/Company/VisionB.jpg);
+  }
+  
+  .a3:hover {
+    background-image: url(../img/Company/MisionB.jpg)
+  }
+  
+  .a4:hover {
+    background-image: url(../img/Company/FilosofiaB.jpg);
   }
   
   .text-accordion {
     text-align: left;
-    background-color: #ffffff00;
     color:black;
     bottom:0;
     opacity:0;
-    padding: 50px 40px;
+    padding: 50px 200px 40px 50px;
+    position: relative;
   }
 
   .box:hover .text-accordion {
@@ -174,77 +147,139 @@ div.company_header {
     width: 250px;
     text-align:left;
     margin:100px auto 20px auto;
-    font-family: 'Asap';
+    font-family: 'Roboto';
   }
   
-  @media screen and (max-width: 800px)
+  @media screen and (max-width: 900px)
   {
-    body {
-      margin:0;
-    }
-    
-    .accordion{
-      flex-direction: column;
-      height: 700px;
-      box-shadow:none;
-    }
-    
-    .box {
-      box-shadow:none;
-    }
-    
-    .box:hover {
-      flex:7;
-    }
+    #company {
+      padding-top: 110px;
+      background-color: #ffffff;
+      width: 100%;
   }
   
-  .typewriter-text-oportunity {
-    overflow: hidden;
+  .company_header {
+      padding: 20px;
+  }
+  
+  #company h3 {
+      line-height: 24px;
+      font-size: 15px;
+      text-align: justify;
+      margin-right: 30px;
+      margin-left: 30px;
+  }
+  
+  #company h {
+    color: #4a610f;
+    text-shadow: 2px 2px #000000;
     position: relative;
-    width: 18em;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
     font-size: 38px;
-    white-space: nowrap;
-  
-    animation: typewriterOportunity 4s steps(44) 1s 1 normal both,
-    blinkTextCursorOportunity 500ms steps(44) infinite normal;
-  
+    font-family: 'Roboto';
   }
   
-  @keyframes typewriterOportunity {
-    from {
-      width: 0;
+    #company h2 {
+      color: #fff;
+      text-shadow: 2px 2px #000000;
+      position: relative;
+      font-size: 35px;
+      font-family: 'Roboto';
     }
   
-    to {
-      width: 18em;
-    }
-  }
-  
-  @keyframes blinkTextCursorOportunity {
-  
-    from {
-      border-right-color: rgba(0, 0, 0, 0.75);
+    #company p {
+      font-family: 'Roboto';
+      font-size: 15px;
+      color: #ffffff;
+      text-shadow: 2px 2px #000000;
     }
   
-    to {
-      border-right-color: transparent;
+    #company .company-text li {
+      margin-bottom: 6px;
+      margin-left: 6px;
+      list-style: none;
+      padding: 0;
     }
   
-  }
-
-  .bubbler-car{
-    height: 20px;
-    background-color: #0198ca;
-    width: 20px;
-    border-radius: 14px;
-    left: 40px;
-    top: 0px;
-    position: absolute;
-    transition: 0.3s all ease;
-    transform: scale(1);
-    animation: light 1.5s infinite alternate;
-    font-size: 15px;
-    padding-right: 6px;
+    #company .company-text li:before {
+      content: "\f00c";
+      font-family: 'Roboto';
+      color: #5ca9fb;
+      font-size: 11px;
+      font-weight: 300;
+      padding-right: 8px;
+    }
+  
+    #company img {
+      width: 520px;
+      margin-top: 10px;
+      border-right: 0;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    }
+    
+    #company .social-line {
+      background: linear-gradient(to right, #02ade7e3 0%, #91d010 100%);
+      width: 42%;
+    }
+    #company .container {
+      padding-left: 35px;
+      width: 100%;
+      /* background: linear-gradient(-40deg, black, #00171f 54%, white 55%, white); */
+    }
+    #company .first-container {
+      width: 100%;
+      height: 500px;
+    }
+    
+   .accordion {
+      Background-color: transparent;
+      height:350px;
+      display:flex;
+      box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+      flex-direction: column;
+      cursor:pointer;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 250px;
+    }
+    
+  .box {
+      position: relative;
+      height:150%;
+      flex:7;
+      background-position:left;
+      background-size:cover;
+      background-color: transparent;
+      transition: .7s;
+      box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+      margin: 5px;
+    }
+  
+    .a1 {
+      background-image: url(../img/Company/VisionB.jpg);
+    }
+    
+    .a3 {
+      background-image: url(../img/Company/MisionB.jpg)
+    }
+    
+    .a4 {
+      background-image: url(../img/Company/FilosofiaB.jpg);
+    }
+    
+    .text-accordion {
+      text-align: left;
+      color:black;
+      bottom:0;
+      opacity:1;
+      padding: 10px;
+      position: relative;
+    }
+  
+    h1 {
+      width: 250px;
+      text-align:left;
+      margin:100px auto 20px auto;
+      font-family: 'Roboto';
+    }
   }
   

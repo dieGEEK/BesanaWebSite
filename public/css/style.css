@@ -7,11 +7,7 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
-}
-h2,
-h3,
-h4 {
-  color: red;
+  background-color: #fff;
 }
 
 
@@ -41,28 +37,6 @@ h4 {
   margin: 4px 2px;
 }
 
-
-h2 {
-  margin: 0 0 20px;
-  font-weight: 800;
-  font-size: 36px;
-  color: #000;
-}
-h3 {
-  font-size: 25px;
-  font-weight: 600;
-  color: #333;
-}
-h4 {
-  font-size: 16px;
-  color: #fff;
-  font-weight: 500;
-}
-h5 {
-  text-transform: uppercase;
-  font-weight: 700;
-  line-height: 20px;
-}
 p {
   font-size: 15px;
 }
@@ -105,7 +79,7 @@ hr {
   width: 100%;
   padding: 0;
   background: url(../img/intro-bg1.jpg) center center no-repeat;
-  background-color: #e5e5e5;
+  background-color: #fff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -144,7 +118,7 @@ header .intro-text {
 
 /* about Section */
 #about {
-  background: #f6f6f6;
+  background: #fff;
 }
 #about i.fa {
   font-size: 38px;
@@ -205,28 +179,6 @@ header .intro-text {
 }
 
 
-
-
-/* oportunity Section */
-#oportunity {
-  padding: 100px 0;
-  background: #f6f6f6;
-}
-
-#oportunity .social-line {
-  background: linear-gradient(to right, #02ade7e3 0%, #91d010 100%);
-  width: 48%;
-}
-
-#productimage{
-  background-image: linear-gradient(to right, #2d5b25 , #092000);
-}
-
-#oportunity i {
-  color: #e6e6e6;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
 .testimonial {
   position: relative;
   padding: 20px;
@@ -412,153 +364,11 @@ label {
 }
 
 
-.typewriter-text {
-  overflow: hidden;
-  position: relative;
-  width: 18em;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 38px;
-  white-space: nowrap;
 
-  animation: typewriter 2.5s steps(24) 1s 1 normal both,
-  blinkTextCursor 1500ms steps(44) infinite normal;
-
-}
-
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 9em;
-  }
-}
-
-@keyframes blinkTextCursor {
-
-  from {
-    border-right-color: rgba(0, 0, 0, 0.75);
-  }
-
-  to {
-    border-right-color: transparent;
-  }
-
-}
-
-.accordion {
-  background: rgba (0,0,0, 0.10);
-  height:250px;
-  display:flex;
-  box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
-  flex-direction: row;
-  cursor:pointer;
-}
-
-.box {
-  position:relative;
-  height:100%;
-  flex:1;
-  background-position:left;
-  background-size:cover;
-  transition: .7s;
-  box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
-}
-.box:hover {
-  flex:7;
-  height:250px;
-}
-
-.a1 {
-  background-image: url(../img/Company/Vision.png)
-}
-.a3 {
-  background-image: url(../img/Company/Mision.png)
-}
-
-.a4 {
-  background-image: url(../img/Company/Filosofia.png)
-}
-
-.text-accordion {
-  text-align: left;
-  background-color: #ffffff00;
-  color:black;
-  bottom:0;
-  opacity:0;
-  padding: 50px 40px;
-}
-
-.box:hover .text-accordion {
-  opacity:1;
-}
-
-h1 {
-  width:250px;
-  text-align:center;
-  margin:100px auto 20px auto;
-}
-
-@media screen and (max-width: 800px)
-{
-  body {
-    margin:0;
-  }
-  
-  .accordion{
-    flex-direction: column;
-    height: 700px;
-    box-shadow:none;
-  }
-  
-  .box {
-    box-shadow:none;
-  }
-  
-  .box:hover {
-    flex:7;
-  }
-}
-
-.typewriter-text-oportunity {
-  overflow: hidden;
-  position: relative;
-  width: 18em;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 38px;
-  white-space: nowrap;
-
-  animation: typewriterOportunity 4s steps(44) 1s 1 normal both,
-  blinkTextCursorOportunity 500ms steps(44) infinite normal;
-
-}
-
-@keyframes typewriterOportunity {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 18em;
-  }
-}
-
-@keyframes blinkTextCursorOportunity {
-
-  from {
-    border-right-color: rgba(0, 0, 0, 0.75);
-  }
-
-  to {
-    border-right-color: transparent;
-  }
-
-}
 
 .bubbler-car{
   height: 20px;
-  background-color: #0198ca;
+  background-color: #1c309c;
   width: 20px;
   border-radius: 14px;
   left: 40px;
@@ -568,5 +378,6 @@ h1 {
   transform: scale(1);
   animation: light 1.5s infinite alternate;
   font-size: 15px;
-  padding-right: 6px;
+  text-align: center;
+  color: #fff;
 }

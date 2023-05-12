@@ -13,7 +13,7 @@ import {
 } from "../../actions/shoppingAction";
 import { ProductDetails } from "../../components/productDetails";
 import { useNavigate, useLocation } from "react-router-dom";
-import { addSponsor } from "../../actions/userActions"
+import { addSponsor } from "../../actions/userActions";
 
 
 function useQuery() {
@@ -21,7 +21,7 @@ function useQuery() {
     return useMemo(() => new URLSearchParams(search), [search]);
 }
 const Landing = ({ data }) => {
-    const isSmallDevice = window.innerWidth < 650;
+    const isSmallDevice = window.innerWidth < 700;
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
     let query = useQuery();
@@ -53,7 +53,7 @@ const Landing = ({ data }) => {
         <Promotion data={data.Promotion} />
         <Publicity data={data.Publicity} />
         {/* <Promotion data={data.Promotion} /> ESTE PARA CUANDO SE DESEE IMPLEMENTAR LO DE CUSTOMER*/}
-        {/* <ProductDetails data={data.Details} /> detalle del producto para despues del carrito */}
+        {/* <ProductDetails data={data.Details} /> */}
         <Footer data={data.Contact} />
     </>)
 }

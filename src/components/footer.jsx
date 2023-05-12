@@ -18,37 +18,29 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 export const Footer = (props) => {
-    const isSmallDevice = window.innerWidth < 650;
+    const isSmallDevice = window.innerWidth < 900;
     const { t, i18n } = useTranslation();
     return (
       <div id="footer">
         <div id="contact">
           <div className="container" >
             <Box sx={{ flexGrow: 1 }}>
-              <Grid container spacing={3} style={{ textAlign: "center" }}>
-                <Grid item sx={3} lg={3}>
+              {window.innerWidth < 900 && (
+                <Grid container spacing={6} style={{ textAlign: "Center"}}>
+                <Grid item sx={3} lg={4}>
                   <p>{t("Footer.FindUs")}</p>
                   <br />
-                  <a href="" className="social-icons">
+                  <a href="https://www.facebook.com/Besana-Global-105344981768065/" className="social-icons">
                     <i className="fa fa-facebook-square" spacing={3}></i>
                   </a>
-                  <a href="" className="social-icons">
+                  <a href="https://www.instagram.com/besanaglobal/" className="social-icons">
                     <i className="fa fa-instagram"></i>
                   </a>
                   <a href="" className="social-icons">
-                    <i className="fa fa-twitter"></i>
+                    <i className="fa fa-youtube-square"></i>
                   </a>
                 </Grid>
-                <Grid item sx={6} lg={6} alignContent={"center"}>
-                  <img
-                    height="80px"
-                    src="img/about1.png"
-                    class="custom-logo"
-                    alt=""
-                    srcset="img/about1.png"
-                  ></img>
-                </Grid>
-                <Grid item sx={3} lg={3} style={{ textAlign: "left" }}>
+                <Grid item sx={3} lg={5} style={{ textAlign: "Right" }}>
                   <p>{t("Footer.Payments")} </p>
                   <br />
                   <a href="" className="social-icons">
@@ -61,7 +53,57 @@ export const Footer = (props) => {
                     <i className="fa fa-cc-paypal"></i>
                   </a>
                 </Grid>
+                <Grid item sx={6} lg={5} alignContent={"Center"}>
+                  <img
+                    height="80px"
+                    src="img/LOGO BESANA CELESTE.png"
+                    class="custom-logo"
+                    alt=""
+                    srcset="img/LOGO BESANA CELESTE.png"
+                  ></img>
+                </Grid>
+                
               </Grid>
+              )}
+              {window.innerWidth >= 900 && (
+                <Grid container spacing={5} style={{ textAlign: "Left"}}>
+                  <Grid item sx={3} lg={4}>
+                    <p>{t("Footer.FindUs")}</p>
+                    <br />
+                    <a href="https://www.facebook.com/Besana-Global-105344981768065/" className="social-icons">
+                      <i className="fa fa-facebook-square" spacing={3}></i>
+                    </a>
+                    <a href="https://www.instagram.com/besanaglobal/" className="social-icons">
+                      <i className="fa fa-instagram"></i>
+                    </a>
+                    <a href="" className="social-icons">
+                      <i className="fa fa-youtube-square"></i>
+                    </a>
+                  </Grid>
+                  <Grid item sx={6} lg={5} alignContent={"Center"}>
+                    <img
+                      height="80px"
+                      src="img/LOGO BESANA CELESTE.png"
+                      class="custom-logo"
+                      alt=""
+                      srcset="img/LOGO BESANA CELESTE.png"
+                    ></img>
+                  </Grid>
+                  <Grid item sx={3} lg={3} style={{ textAlign: "left" }}>
+                    <p>{t("Footer.Payments")} </p>
+                    <br />
+                    <a href="" className="social-icons">
+                      <i className="fa fa-cc-visa"></i>
+                    </a>
+                    <a href="" className="social-icons">
+                      <i className="fa fa-cc-mastercard"></i>
+                    </a>
+                    <a href="" className="social-icons">
+                      <i className="fa fa-cc-paypal"></i>
+                    </a>
+                  </Grid>
+                </Grid>
+              )}
             </Box>
             <div className="col-md-12" style={{ marginTop: 20 }}>
               <div className="row">
@@ -69,42 +111,54 @@ export const Footer = (props) => {
                 <div className="social">
                   <Grid container style={{ textAlign: "initial", flexDirection: isSmallDevice ? "column" : "row" }}>
                     <Grid item sx={3} lg={3}>
-                      <h3>{t("Footer.Company")}</h3>
-                      <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span>
+                      <a href="/company"><h3>{t("Footer.Company")}</h3></a>
+                      <a href="/company"><h4>
+                        <span> </span>
                         {t("Footer.AboutUs")}
-                      </h4>
-                      <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span>
+                      </h4></a>
+                      <a href="/#besanaBeauty"><h4>
+                        <span > </span>
                         {t("Footer.Shop")}
-                      </h4>
+                      </h4></a>
+                      <a href="/useterms"><h4>
+                        <span > </span>
+                        {t("Footer.TermsOfUse")}
+                      </h4></a>
+                      <a href="/privacypolicy"><h4>
+                        <span > </span>
+                        {t("Footer.PrivacyPolicy")}
+                      </h4></a>
+                      <a href="/returnpolicys"><h4>
+                        <span > </span>
+                        {t("Footer.ReturnPolicy")}
+                      </h4></a>
                     </Grid>
-                    <Grid item sx={3} lg={3} style={{ paddingLeft: "15px" }}>
-                      <h3>{t("Footer.Shop")}</h3>
-                      <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span> Besana Beauty
-                      </h4>
-                      <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span> Besana Health
-                      </h4>
+                    <Grid item sx={3} lg={3} style={{ paddingLeft: isSmallDevice ? 0 : 15 }}>
+                      <a href="/#besanaBeauty"><h3>{t("Footer.Shop")}</h3></a>
+                      <a href="/#besanaBeauty"><h4>
+                        <span > </span> Besana Beauty
+                      </h4></a>
+                      <a href="/#besanaHealth"><h4>
+                        <span > </span> Besana Health
+                      </h4></a>
                     </Grid>
-                    <Grid item sx={3} lg={3} style={{ paddingLeft: "15px" }}>
-                      <h3>{t("Footer.Opportunity")}</h3>
+                    <Grid item sx={3} lg={3} style={{ paddingLeft: isSmallDevice ? 0 : 15 }}>
+                      <a href="/oportunity"><h3>{t("Footer.Opportunity")}</h3></a>
                       <div alignContent="left">
                       <h4>
-                        <span class="nav-arrow fa fa-angle-right"> </span> {t("Footer.PaymentsOpportunity")}
+                        <span > </span> {t("Footer.PaymentsOpportunity")}
                       </h4>
                       </div>
                     </Grid>
-                    <Grid item sx={3} lg={3} style={{ paddingLeft: "15px" }}>
-                      <h3>{t("Footer.Contact")}</h3>
+                    <Grid item sx={3} lg={3} style={{ paddingLeft: isSmallDevice ? 0 : 15, marginBottom: isSmallDevice ? 10 : 0 }}>
+                      <a href="/company#map"><h3>{t("Footer.Contact")}</h3></a>
                       <h4>
                         {" "}
                         <MdLocationOn size="1em" />
                         2449 N TENAYA WAY, LAS VEGAS NV 89128, USA.
                       </h4>
                       <h4>
-                        <MdPhoneEnabled size="1em" /> {"+1 (800) 477-8358"}{" "}
+                        <MdPhoneEnabled size="1em" /> {"+1 (888) 294-2285"}{" "}
                       </h4>
                       <h4>
                         <FaEnvelope size="1em" />
