@@ -9,11 +9,16 @@ import { Navigation } from "./navigation";
 
 export const ProductDetail = (props, data) => {
     const [product, setProduct] = React.useState({});
+
     const { t, i18n } = useTranslation();
     const isSmallDevice = window.innerWidth < 900;
+ 
     return (
+       
         <>
             <Navigation style={{ backgroundColor: "#ffffff" }}/>
+       
+            
             <img
             // src={smallImage}
             // className="img-product"
@@ -27,6 +32,7 @@ export const ProductDetail = (props, data) => {
             />{" "}
             <h3 id="modal-modal-title">
             {product.productTitle ?? ""}
+           
             </h3>
             {
             product.productDescription &&

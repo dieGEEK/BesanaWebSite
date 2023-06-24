@@ -26,7 +26,7 @@ export const Footer = (props) => {
           <div className="container" >
             <Box sx={{ flexGrow: 1 }}>
               {window.innerWidth < 900 && (
-                <Grid container spacing={6} style={{ textAlign: "Center"}}>
+                <Grid item container spacing={6} style={{ textAlign: "Center"}}>
                 <Grid item sx={3} lg={4}>
                   <p>{t("Footer.FindUs")}</p>
                   <br />
@@ -53,20 +53,19 @@ export const Footer = (props) => {
                     <i className="fa fa-cc-paypal"></i>
                   </a>
                 </Grid>
-                <Grid item sx={6} lg={5} alignContent={"Center"}>
+                <Grid item sx={6} lg={5} >
                   <img
                     height="80px"
                     src="img/LOGO BESANA CELESTE.png"
-                    class="custom-logo"
+                    className="custom-logo"
                     alt=""
-                    srcset="img/LOGO BESANA CELESTE.png"
                   ></img>
                 </Grid>
                 
               </Grid>
               )}
               {window.innerWidth >= 900 && (
-                <Grid container spacing={5} style={{ textAlign: "Left"}}>
+                <Grid item container spacing={5} style={{ textAlign: "Left"}}>
                   <Grid item sx={3} lg={4}>
                     <p>{t("Footer.FindUs")}</p>
                     <br />
@@ -80,13 +79,12 @@ export const Footer = (props) => {
                       <i className="fa fa-youtube-square"></i>
                     </a>
                   </Grid>
-                  <Grid item sx={6} lg={5} alignContent={"Center"}>
+                  <Grid item sx={6} lg={5} >
                     <img
                       height="80px"
                       src="img/LOGO BESANA CELESTE.png"
-                      class="custom-logo"
+                      className="custom-logo"
                       alt=""
-                      srcset="img/LOGO BESANA CELESTE.png"
                     ></img>
                   </Grid>
                   <Grid item sx={3} lg={3} style={{ textAlign: "left" }}>
@@ -144,7 +142,7 @@ export const Footer = (props) => {
                     </Grid>
                     <Grid item sx={3} lg={3} style={{ paddingLeft: isSmallDevice ? 0 : 15 }}>
                       <a href="/oportunity"><h3>{t("Footer.Opportunity")}</h3></a>
-                      <div alignContent="left">
+                      <div >
                       <h4>
                         <span > </span> {t("Footer.PaymentsOpportunity")}
                       </h4>

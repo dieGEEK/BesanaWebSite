@@ -29,12 +29,12 @@ export const Publicity = (props) => {
         <Grid item xs={12} lg={6}>
           <div id="content-promotion">
             <Grid item xs={12} lg={12} style={{ paddingTop: isSmallDevice ? 10 : 30 }}>
-              <h>
+              <h1>
                 {t("Publicity.Title")} 
-              </h>
-              <h>
+              </h1>
+              <h2>
                 {t("Publicity.Subtitle")}
-              </h>
+              </h2>
             </Grid>
             <Grid item xs={12} lg={12} style={{ paddingTop: isSmallDevice ? 20 : 20 }}>
               <h2>
@@ -60,7 +60,7 @@ export const Publicity = (props) => {
             <Grid item xs={12} lg={12} style={{ paddingTop: isSmallDevice ? 20 : 60 }}>
               <input
                 type="button"
-                class="button"
+                className="button"
                 value={t("Publicity.Button")}
                 onClick={() => handleClick()}
               />

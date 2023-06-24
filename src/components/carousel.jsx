@@ -25,9 +25,9 @@ export const Carrousel = (props) => {
             }}
             >
                 {props.data?.map((d, i) => (
-                    <Paper {...props} elevation={0}>
+                    <Paper key={i} {...props} elevation={0}>
                         {
-                            i18n.language == 'es' ? <img src={d.esImage}/> : <img src={d.enImage}/>   
+                            i18n.language === 'es' ? <img src={d.esImage}/> : <img src={d.enImage}/>   
                         }
                     </Paper>
                 ))}

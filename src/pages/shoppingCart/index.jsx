@@ -6,6 +6,8 @@ import {
   //   decreaseCart,
   delFromCart,
 } from "../../actions/shoppingAction";
+import { AxiosPost } from '../../api/axios'
+
 import { addSponsor } from "../../actions/userActions"
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -26,7 +28,7 @@ const ShoppingCart = () => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product.id));
+    dispatch(addToCart(product.idProd));
   };
   const handleDecreaseCart = (product) => {
     dispatch(delFromCart(product.id));
@@ -43,15 +45,27 @@ const ShoppingCart = () => {
     return getSymbolFromCurrency(currencyFomrat) + ammont
   })
 
-  const handleClick = () => {
-    let sposorName = validateSponsor()
-    dispatch(addSponsor(sposorName))
+  const handleClick = async () => {
+    var spon = true;
+    while (spon) {
+     let sponsor = validateSponsor()
+     const param={
+      sponsor:sponsor
+     }
+    var response = await AxiosPost('Sponsor', param);
+    console.log(response.data.mensaje)
+
+     response.data.mensaje === 'yes' ? spon=false : alert('Sponsor No Existe!!, Intente de nuevo.');
+    }
+    dispatch(addSponsor(response))
+
     navigate("/confirmPayment");
 
   }
 
   const validateSponsor = () => {
     let sposorName = query.get("sponsor");
+    console.log(sposorName)
     while (sposorName === null || sposorName === "" || sposorName === "null") {
       sposorName = prompt("Please enter sponsor Name:")
     }
@@ -62,7 +76,7 @@ const ShoppingCart = () => {
     <>
       <Navigation style={{ backgroundColor: "#ffffff" }} />
       <div className="cart-container">
-        <h2>Shopping Cart</h2>
+        <h2>Shopping Cart </h2>
         {cart.length === 0 ? (
           <div className="cart-empty">
             <p>Your cart is currently empty</p>
@@ -96,9 +110,9 @@ const ShoppingCart = () => {
             <div className="cart-items">
               {cart &&
                 cart.map((cartItem) => (
-                  <div className="cart-item" key={cartItem.id}>
+                  <div className="cart-item" key={cartItem.idProd}>
                     <div className="cart-product">
-                      <img src={cartItem.img} alt={cartItem.name} />
+                      <img src={`/img/portfolio/${cartItem.img}`} alt={cartItem.name} />
                       <div>
                         <h3>{cartItem.name}</h3>
                         <button
@@ -109,7 +123,7 @@ const ShoppingCart = () => {
                       </div>
                     </div>
                     <div className="cart-product-price">
-                      {mapCurrentFormat(cartItem.parsedPrice)}
+                      {mapCurrentFormat(cartItem.price)}
                     </div>
                     <div className="cart-product-quantity">
                       <button onClick={() => handleDecreaseCart(cartItem)}>
@@ -121,7 +135,7 @@ const ShoppingCart = () => {
                       </button>
                     </div>
                     <div className="cart-product-total-price">
-                      {mapCurrentFormat(cartItem.parsedPrice * cartItem.quantity)}
+                      {mapCurrentFormat(cartItem.price * cartItem.quantity)}
                     </div>
                   </div>
                 ))}
@@ -137,7 +151,7 @@ const ShoppingCart = () => {
 
                     {mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
-                        partialSum + a.parsedPrice * a.quantity,
+                        partialSum + a.price * a.quantity,
                       0
                     ).toFixed(2))}
                   </span>

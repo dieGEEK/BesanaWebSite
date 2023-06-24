@@ -14,7 +14,6 @@ import { ProductDetails } from "./components/productDetails";
 import React, { useState, useEffect } from "react";
 import JsonData from "./data/data.json";
 import ShoppingCart from "./pages/shoppingCart";
-import { Navigation } from "./components/navigation";
 import ConfirmPayment from "./pages/confirmPayment";
 
 const Router = () => {
@@ -35,7 +34,7 @@ const Router = () => {
                     <Route path="/product/:id" element={<Product />} />
                     <Route path="/shoppingCar" element={<ShoppingCart />} />
                     <Route path="/confirmPayment" element={<ConfirmPayment />} />
-                    <Route path="/:id" element={<ProductDetails />} />
+                    <Route path="/:id" element={<ProductDetails  />} />
                     <Route path="/" element={<Landing data={landingPageData} />} />
                 </Routes>
             </div>

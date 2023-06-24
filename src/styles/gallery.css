@@ -42,6 +42,7 @@ div .section-title {
 }
 
 .producto{
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +71,7 @@ div .section-title {
 .producto-footer{
   display: grid;
   grid-template-columns: 1fr;
+  height: max-content;
 }
 
 .producto-detalle h1{
@@ -80,6 +82,7 @@ div .section-title {
   text-align: center;
   font-family: 'Roboto';
   width: 100%;
+  height: auto;
 }
 
 .producto-detalle p{
@@ -93,10 +96,12 @@ div .section-title {
 }
 
 .producto .producto-botones{
+  align-items: center;
+justify-content: center;
   width: 100%;
   color: #701649;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  display: flex;
+  /* grid-template-columns: 1fr 1.5fr; */
   gap: 1rem;
 }
 

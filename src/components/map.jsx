@@ -22,9 +22,9 @@ export const Map = (props) => {
           <Grid item xs={12} lg={6} style={{ background: "white" }}>
             <div id="content-promotion">
               <Grid item xs={12} lg={12} style={{ paddingTop: isSmallDevice ? 5 : 30 }}>
-                <h>
+                <h1>
                   {t("Footer.Contact")}
-                </h>
+                </h1>
               </Grid>
               <Grid
                 item

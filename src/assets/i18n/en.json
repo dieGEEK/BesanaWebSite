@@ -8,6 +8,7 @@
         "MyAccount": "Log In",
         "JoinUs": "Affiliate"
     },
+    "BesanaBeautyPack":"Besana Beauty Pack",
 
     "Gallery": {
         "Title": "Ours Products",
@@ -37,8 +38,9 @@
     },
 
     "Details":{
+        "BesanaBeautyPack":"Pack Belleza Besana",
         "Desc": "This product contains a combination of hydrating, antioxidant, and anti-wrinkle ingredients that work together to improve the appearance of skin, smooth fine lines, and reduce the signs of aging, providing a more youthful, rejuvenated appearance with continued use.",
-        "Ingredients": "INGREDIENTS",
+        "Ingredients": "Ingredients",
         "Ingredient1": "Cucumber extract",
         "Ingredient2": "Green Tea",
         "Ingredient3": "Deionized water",

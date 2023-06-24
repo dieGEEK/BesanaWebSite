@@ -12,6 +12,7 @@ export const initialState = {
   cart: [],
 };
 
+
 export function shoppingReducer(state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCT: {
@@ -19,17 +20,16 @@ export function shoppingReducer(state = initialState, action) {
     }
     case ADD_TO_CART: {
       let newItem = state.products.find(
-        (product) => product.id === action.payload
+        (product) => product.idProd === action.payload
       );
-      //console.log(newItem);
 
-      let itemInCart = state.cart.find((item) => item.id === newItem.id);
+      let itemInCart = state.cart.find((item) => item.idProd === newItem.idProd);
 
       return itemInCart
         ? {
             ...state,
             cart: state.cart.map((item) =>
-              item.id === newItem.id
+              item.idProd === newItem.idProd
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
             ),

@@ -9,8 +9,17 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Navigation } from "../../components/navigation";
 import getSymbolFromCurrency from 'currency-symbol-map'
+import { useState } from 'react';
 
 const ConfirmPayment = () => {
+  const [taxTotal, setTaxTotal] = useState({
+    taxproducto:0,
+    taxState:0,
+    total:0,
+    envio:0
+  });
+  // const [taxTotal, setTaxTotal] = useState(0);
+
   const state = useSelector((state) => state);
   const navigate = useNavigate();
   const { cart } = state.shopping;
@@ -19,20 +28,85 @@ const ConfirmPayment = () => {
   const stripe = useStripe();
   const element = useElements();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+console.log(sponsor.data.data)
+  const sponsorGet=sponsor.data.data;
+  var total= cart.reduce(
+    (partialSum, a) =>
+      partialSum + a.price * a.quantity,
+    0
+  )
+    console.log(total)
+
+    cart.map((item) => {
+      console.log(item)
+      
+    })
+
+    const VerifarTax=(e)=>{
+      e.preventDefault();
+      console.log(e);
+      let stateUp=e.target.value.toUpperCase();
+      console.log('ver estado para tax')
+      console.log(stateUp)
+   
+      if (stateUp==='NEVADA') {
+          let sTotalTax =total*8.375/100;
+          let taxN=Number(sTotalTax.toFixed(2));
+          let sum=taxN+total+7;
+          let TotalN=Number(sum.toFixed(2));
+          setTaxTotal({
+            taxproducto:taxN,
+            taxState:8.375,
+            total:TotalN,
+            envio:7
+          });
+      
+       
+
+      }else{
+          let sTotalTax =total;
+          let taxN=Number(sTotalTax.toFixed(2));
+          let sum=taxN+7;
+          let TotalN=Number(sum.toFixed(2));
+          setTaxTotal({
+            taxproducto:taxN,
+            taxState:0,
+            total:TotalN,
+            envio:7
+          });
+      }
+
+      console.log('objeto tax')
+      console.log(taxTotal)
+
+   
+      
+
+      console.log(taxTotal)
+
+    }
+  
 
   const onSubmit = async (event) => {
-
+//SACAR EL TAX
+   
+    console.log('vemos cuanto lleva tax');
+   
     if (!stripe || !element) {
       return;
     }
+   
     const result = await stripe.createToken(element.getElement(CardElement));
+   
     if (result.token) {
+      
+      
       const OrdersModel = {
         user: {
           id: '',
           name: event.firstname,
           lastName: event.lastName,
-          userName: sponsor,
+          userName: sponsorGet,
           email: event.email,
           workPhone: event.phone,
           zipCode: event.zip,
@@ -42,23 +116,27 @@ const ConfirmPayment = () => {
           city: event.city,
         },
         producDetail: cart.map((item) => {
+          let taxproduct = (item.price*taxTotal.taxState)/100;
+          console.log(taxproduct);
           return {
+            idProduct: item.idProd,
+            nameProduct:item.name,
+            price:item.price,
+            taxProduct:taxproduct,
             quantityProduct: item.quantity,
-            idProduct: item.id
+            subtotal:item.price*item.quantity+taxproduct
           }
         }),
         tokenCard: result.token.id,
-        BuyType: 'CREDIT_CAR'
+        BuyType: 'CREDIT_CAR',
+        total:taxTotal.total,
+        shipping:taxTotal.envio
       }
-      var response = await AxiosPost('Buy/Buy', OrdersModel);
-
-      if (response) {
-        dispatch(clearCart());
-        navigate("/")
-        setTimeout(() => {
-          alert("Compra finalizada con exito")
-        }, 1000)
-      }
+      var response = await AxiosPost('Buy', OrdersModel);
+      console.log(response)
+    dispatch(clearCart());
+    navigate("/");
+      
 
     } else {
       alert('Error: ' + result.error.message)
@@ -78,6 +156,7 @@ const ConfirmPayment = () => {
         <div class="rowConfirm">
           <div class="col-75">
             <div class="myContainer">
+              <h2> Sponsor : {sponsorGet}</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="rowConfirm">
                   <div class="col-10">
@@ -188,6 +267,7 @@ const ConfirmPayment = () => {
                       id="state"
                       name="state"
                       placeholder="State"
+                      onBlur={(e)=>VerifarTax(e) }
                     />
                     {errors.state && (
                       <span class="error">This field is required</span>
@@ -228,7 +308,7 @@ const ConfirmPayment = () => {
                   type="submit"
                   disabled={!stripe}
                   value="Confirm order"
-                  class="btn"
+                  className="btn"
                 />
               </form>
             </div>
@@ -246,22 +326,27 @@ const ConfirmPayment = () => {
                   <p>
                     <a href="#">{item.name}</a>{" "}
                     <span class="price">
-
-                      {mapCurrentFormat(item.parsedPrice)} x </span>
+                      {mapCurrentFormat(item.price)} x </span>
                     <b>{item.quantity}</b>
                   </p>
                 );
               })}
+              
+              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto)}</p>
+              <p class="price">Envio: {mapCurrentFormat(taxTotal.envio.toFixed(2))}</p>
+
+
               <p>
                 Total{" "}
                 <span class="price">
                   <b>
-
-                    {mapCurrentFormat(cart.reduce(
+                    {mapCurrentFormat(taxTotal.total)}
+                    {/* {mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
-                        partialSum + a.parsedPrice * a.quantity,
+                        partialSum + a.price * a.quantity,
                       0
-                    ))}
+                    ))} */}
+
                   </b>
                 </span>
               </p>

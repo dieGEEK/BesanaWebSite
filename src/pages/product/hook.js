@@ -3,10 +3,12 @@ import { AxiosGet } from "../../api/axios/index";
 
 const useHook = (id) => {
   const [product, setState] = useState([]);
-  useEffect(async () => {
-    let response = await AxiosGet("Product");
+  useEffect( 
+    async () => {
+    let response = await AxiosGet(id);
     setState(response);
   }, []);
+  
   return { product };
 };
 

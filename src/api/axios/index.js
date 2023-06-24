@@ -1,16 +1,20 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://backofficeapi.besanaglobal.com/",
+  // baseURL: "https://backofficeapi.besanaglobal.com/",
+  baseURL: "http://localhost:8000/api/",
   timeout: 15000,
 });
 
 export const AxiosGet = async (url, params = {}) => {
+ 
   try {
     let result = await instance.get(url, {
       params: params,
+      rejectUnauthorized: false
     });
-    return result.data.entity;
+   
+    return result.data;
   } catch (e) {
     alert("Error: " + e.response.data.message);
   }
@@ -27,6 +31,19 @@ export const getCurrencyApi = async (url, currency) => {
 
 export const AxiosPost = async (url, params = {}) => {
   try {
+    if (url==='Buy') {
+      let result = await instance.post(url, params);
+      return result.data;
+    }
+    if(url==='Sponsor'){
+      console.log(params)
+     
+      let result = await instance.post(url, params);
+      console.log(result)
+
+      return result;
+
+    }
     let result = await instance.post(url, params);
     return result.data.entity;
   } catch (e) {

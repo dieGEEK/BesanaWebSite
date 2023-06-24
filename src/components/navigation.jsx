@@ -19,15 +19,16 @@ import {
 } from "../actions/shoppingAction";
 import "../styles/navigation_op.css";
 import { Chat } from "./chat";
+import { red } from '@mui/material/colors';
 
 
 const optionsList = [
-  { value: 'en', description: 'USA', img: Usa, currency: 'USD' },
-  { value: 'es', description: 'USA (es)', img: Usa, currency: 'USD' },
-  { value: 'es', description: 'Guatemala', img: Guatemala, currency: 'GTQ' },
-  { value: 'es', description: 'Colombia', img: Col, currency: 'COP' },
-  { value: 'es', description: 'México', img: Mexico, currency: 'MXN' },
-  { value: 'es', description: 'Panama', img: Panama, currency: 'USD' },
+  {  value: 'en', description: 'USA', img: Usa, currency: 'USD' },
+  {  value: 'es', description: 'USA (es)', img: Usa, currency: 'USD' },
+  {  value: 'es', description: 'Guatemala', img: Guatemala, currency: 'GTQ' },
+  {  value: 'es', description: 'Colombia', img: Col, currency: 'COP' },
+  {  value: 'es', description: 'México', img: Mexico, currency: 'MXN' },
+  {  value: 'es', description: 'Panama', img: Panama, currency: 'USD' },
 ]
 
 export const Navigation = (props) => {
@@ -56,25 +57,26 @@ export const Navigation = (props) => {
       id="menu"
       className="navbar navbar-default navbar-fixed-top"
     >
-      <div className="container" className="fisrt-div-nav-bar">
-        <Grid container xs={16} style={{ display: "flex", justifyContent: "flex-end" }} >
+      <div  className="fisrt-div-nav-bar " style={{ backgroundColor:red}}>
+        <Grid item={true} container xs={16} style={{ display: "flex", justifyContent: "flex-end" }} >
 
-          <Grid item xs={1} style={{ marginRight: isSmallDevice ? 40 : 28 }}>
+          <Grid item={true} xs={1} style={{ marginRight: isSmallDevice ? 40 : 28 }}>
           {window.innerWidth < 900 && (
             <>
               <img
-                src="img/LOGO BESANA.png"
+                src="img/logoweb.png"
                 style={{
                   width: 95,
                   height: 80,
                   paddingBottom: 10,
                   marginLeft: 20,
                 }}
+                alt='BesanaGlobal.com'
               />
             </>
           )}
           </Grid>
-          <Grid item xs={3} style={{
+          <Grid item={true} xs={3} style={{
             alignContent: "center",
             display: "flex",
             flexDirection: "row",
@@ -83,7 +85,7 @@ export const Navigation = (props) => {
             }}
           ></Grid>
             {window.innerWidth < 900 && (   
-              <Grid item xs={3} style={{ marginRight: isSmallDevice ? 20 : 0 }}>                 
+              <Grid item={true} xs={3} style={{ marginRight: isSmallDevice ? 20 : 0 }}>                 
                 <Select
                   label={language}
                   optionsList={optionsList}
@@ -94,7 +96,7 @@ export const Navigation = (props) => {
             {window.innerWidth < 900 && (   
               <Grid item xs={2} style={{ marginRight: isSmallDevice ? 20 : 0 }}>
                 <Button style={{ width: 80, height: 80, marginBottom: 0 }} onClick={() => { setMenuSmallDeviceVisible(!menuSmallDeviceVisible) }} >
-                  <img style={{ width: 50, height: 50, marginRight: 0 }} src={BurguerMenu} />
+                  <img style={{ width: 50, height: 50, marginRight: 0 }} src={BurguerMenu} alt='BurgerMenu' />
                 </Button>
               </Grid>                              
             )}
@@ -125,14 +127,15 @@ export const Navigation = (props) => {
                   paddingBottom: 12,
                 }}
               >
-                <img src="img/LOGO BESANA.png" style={{ width: 110, height: 90 }} />
+                <img alt='' src="img/logoweb.png" style={{ width: 300, height: 110 }} />
               </div>
             )}
             <ul
               className="nav navbar-nav navbar-right"
               style={{
                 textAlign: "end",
-                color: "#fff !important",
+                // color: "#fff !important",
+                backgroundColor:red,
                 paddingRight: 40,
                 paddingTop: 28,
               }}
@@ -142,7 +145,7 @@ export const Navigation = (props) => {
                   {t("Navbar.Home")}
                 </a>
               </li>
-              <li class="dropdown">
+              <li className="dropdown">
                  <a href="/#besanaBeauty" className="page-scroll" style={{ textColor: "#fff !important" }}>
                   {t("Navbar.Products")}
                 </a>
@@ -159,7 +162,7 @@ export const Navigation = (props) => {
               </li>
               <li>
                 <a
-                  href="https://backoffice.besanaglobal.com/login"
+                  href="https://besanaglobalcolombia.com"
                   className="page-scroll"
                 >
                   {t("Navbar.MyAccount")}
@@ -168,7 +171,7 @@ export const Navigation = (props) => {
               <li>
                 <a
                   className="menu-link"
-                  href={`https://backoffice.besanaglobal.com/sign-up?sponsor=${!!sponsor ? sponsor : null}`}
+                  href={`https://besanaglobalcolombia.com/register?sponsor=${!!sponsor ? sponsor : null}`}
                 >
                   {t("Navbar.JoinUs")}
                 </a>
@@ -208,7 +211,7 @@ export const Navigation = (props) => {
                 {t("Navbar.Home")}
               </a>
             </li>
-            <li class="dropdown">
+            <li className="dropdown">
               <a href="/#besanaBeauty" className="page-scroll">
                 {t("Navbar.Products")}
               </a>              
