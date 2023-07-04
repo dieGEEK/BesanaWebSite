@@ -68,7 +68,7 @@ const price = product.price
     
     const [descriptionItem, setdescription] = useState("");
   
-    const urlImage='http://localhost:3000/img/portfolio/'+product.img;
+    const urlImage='img/portfolio/'+product.img;
     
 
     
