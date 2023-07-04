@@ -63,7 +63,7 @@ export const Image = ({
 
         break;
    }
-  const urlImage='http://localhost:3000/img/portfolio/'+image;
+  const urlImage='img/portfolio/'+image;
 
   return (
     <div className="producto">
