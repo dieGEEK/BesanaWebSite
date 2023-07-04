@@ -162,7 +162,7 @@ export const Navigation = (props) => {
               </li>
               <li>
                 <a
-                  href="https://besanaglobalcolombia.com"
+                  href="https://backoffice.besanaglobal.com"
                   className="page-scroll"
                 >
                   {t("Navbar.MyAccount")}
@@ -171,7 +171,7 @@ export const Navigation = (props) => {
               <li>
                 <a
                   className="menu-link"
-                  href={`https://besanaglobalcolombia.com/register?sponsor=${!!sponsor ? sponsor : null}`}
+                  href={`https://backoffice.besanaglobal.com/register?sponsor=${!!sponsor ? sponsor : null}`}
                 >
                   {t("Navbar.JoinUs")}
                 </a>

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   // baseURL: "https://backofficeapi.besanaglobal.com/",
-  baseURL: "http://localhost:8000/api/",
+  baseURL: "https://backoffice.besanaglobal.com/api/",
   timeout: 15000,
 });
 
