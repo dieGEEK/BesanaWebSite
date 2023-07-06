@@ -42,7 +42,7 @@ export const Gallery = (props) => {
               Besana Beauty
             </p>
             <div className="row">
-              <a>{t("Gallery.SubTitleBeauty")}</a><a style={{ fontWeight: 'bold' }}>BESANA BEAUTY. ACABO DE AGREGAR ESTO</a>
+              <a>{t("Gallery.SubTitleBeauty")}</a><a style={{ fontWeight: 'bold' }}>BESANA BEAUTY.</a>
             </div>
           </div>
 
