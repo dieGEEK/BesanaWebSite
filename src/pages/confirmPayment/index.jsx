@@ -28,8 +28,43 @@ const ConfirmPayment = () => {
   const stripe = useStripe();
   const element = useElements();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-console.log(sponsor.data.data)
   const sponsorGet=sponsor.data.data;
+
+  const lenguage=window.localStorage.getItem('country')??'USA'
+  const curren=window.localStorage.getItem('currency')??'USD'
+  console.log(curren)
+  var convertir=0;
+ 
+  switch (lenguage) {
+    case 'USA':
+      convertir=1;
+        break;
+        
+   case 'USA (es)':
+          convertir=1;
+            break;
+    case 'Guatemala':
+        convertir= 7.8 ;
+        
+        break;
+    case 'Colombia':
+      
+        convertir=4171.57;
+        break;
+    case 'México':
+        convertir=17.28;
+        
+        break;
+    case 'Panama':
+          convertir=1
+        break;
+    default:
+          // eslint-disable-next-line no-unused-vars
+          convertir=1;
+
+        break;
+   }
+
   var total= cart.reduce(
     (partialSum, a) =>
       partialSum + a.price * a.quantity,
@@ -64,10 +99,10 @@ console.log(sponsor.data.data)
        
 
       }else{
-          let sTotalTax =total;
+          let sTotalTax =0;
           let taxN=Number(sTotalTax.toFixed(2));
-          let sum=taxN+7;
-          let TotalN=Number(sum.toFixed(2));
+          let sum=total+7;
+          var TotalN=Number(sum.toFixed(2));
           setTaxTotal({
             taxproducto:taxN,
             taxState:0,
@@ -133,7 +168,8 @@ console.log(sponsor.data.data)
         shipping:taxTotal.envio
       }
       var response = await AxiosPost('Buy', OrdersModel);
-      console.log(response)
+      console.log(response.mensaje)
+      alert(response.mensaje);
     dispatch(clearCart());
     navigate("/");
       
@@ -326,21 +362,21 @@ console.log(sponsor.data.data)
                   <p>
                     <a href="#">{item.name}</a>{" "}
                     <span class="price">
-                      {mapCurrentFormat(item.price)} x </span>
+                      {mapCurrentFormat(item.price*convertir)} x </span>
                     <b>{item.quantity}</b>
                   </p>
                 );
               })}
               
-              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto)}</p>
-              <p class="price">Envio: {mapCurrentFormat(taxTotal.envio.toFixed(2))}</p>
+              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto*convertir)}</p>
+              <p class="price">Envio: {mapCurrentFormat((taxTotal.envio*convertir).toFixed(2))}</p>
 
 
               <p>
                 Total{" "}
                 <span class="price">
                   <b>
-                    {mapCurrentFormat(taxTotal.total)}
+                    {mapCurrentFormat(taxTotal.total*convertir)}
                     {/* {mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
                         partialSum + a.price * a.quantity,

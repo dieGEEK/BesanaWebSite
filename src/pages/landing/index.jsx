@@ -39,9 +39,8 @@ const Landing = ({ data }) => {
 
     const getProductList =  async () => {
         let currensySimbol = localStorage.getItem('currency') ?? 'USD'
-         let result = await getCurrencyApi('https://api.exchangeratesapi.io/v1/latest?access_key=a41e1fc4c595db3466126cafb507f63f&base=USD&symbols=', currensySimbol)
+        //  let result = await getCurrencyApi('https://api.exchangeratesapi.io/v1/latest?access_key=a41e1fc4c595db3466126cafb507f63f&base=USD&symbols=', currensySimbol)
         let response = await  AxiosGet('products');
-        console.log(currensySimbol)
         setProducts(response)
         setGall(true);
         dispatch(setProductList(response))

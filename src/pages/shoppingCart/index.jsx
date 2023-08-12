@@ -22,6 +22,41 @@ function useQuery() {
 
 const ShoppingCart = () => {
   const state = useSelector((state) => state);
+  console.log(state)
+  const lenguage=window.localStorage.getItem('country')??'USA'
+  const curren=window.localStorage.getItem('currency')??'USD'
+  console.log(curren)
+  let convertir=0;
+ 
+  switch (lenguage) {
+    case 'USA':
+      convertir=1;
+        break;
+        
+   case 'USA (es)':
+          convertir=1;
+            break;
+    case 'Guatemala':
+        convertir= 7.8 ;
+        
+        break;
+    case 'Colombia':
+      
+        convertir=4171.57;
+        break;
+    case 'México':
+        convertir=17.28;
+        
+        break;
+    case 'Panama':
+          convertir=1
+        break;
+    default:
+          // eslint-disable-next-line no-unused-vars
+          convertir=1;
+
+        break;
+   }
   const navigate = useNavigate();
   let query = useQuery();
   const { cart } = state.shopping;
@@ -65,8 +100,9 @@ const ShoppingCart = () => {
 
   const validateSponsor = () => {
     let sposorName = query.get("sponsor");
+    console.log('sponsor get')
     console.log(sposorName)
-    while (sposorName === null || sposorName === "" || sposorName === "null") {
+    while (sposorName === null || sposorName === "" || sposorName === "null"|| sposorName==="no") {
       sposorName = prompt("Please enter sponsor Name:")
     }
     return sposorName
@@ -123,7 +159,7 @@ const ShoppingCart = () => {
                       </div>
                     </div>
                     <div className="cart-product-price">
-                      {mapCurrentFormat(cartItem.price)}
+                      {mapCurrentFormat((cartItem.price*convertir).toFixed(2))}
                     </div>
                     <div className="cart-product-quantity">
                       <button onClick={() => handleDecreaseCart(cartItem)}>
@@ -135,7 +171,7 @@ const ShoppingCart = () => {
                       </button>
                     </div>
                     <div className="cart-product-total-price">
-                      {mapCurrentFormat(cartItem.price * cartItem.quantity)}
+                      {mapCurrentFormat((((cartItem.price * cartItem.quantity)*convertir)).toFixed(2))}
                     </div>
                   </div>
                 ))}
@@ -151,7 +187,7 @@ const ShoppingCart = () => {
 
                     {mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
-                        partialSum + a.price * a.quantity,
+                       ( ((partialSum + a.price) * a.quantity)*convertir),
                       0
                     ).toFixed(2))}
                   </span>

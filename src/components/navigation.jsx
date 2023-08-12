@@ -36,7 +36,12 @@ export const Navigation = (props) => {
   const [menuSmallDeviceVisible, setMenuSmallDeviceVisible] = useState(false);
   const { t, i18n } = useTranslation();
   const state = useSelector((state) => state);
-  const { shopping: { cart }, user: { sponsor } } = state;
+  console.log("state")
+  console.log(state.user.sponsor)
+  
+
+   const { shopping: { cart }, user } = state;
+   const { sponsor }=user;
   const [language, setLanguage] = useState(() => {
     const languageKey = window.localStorage.getItem('country') ?? 'USA'
     return languageKey
@@ -171,14 +176,14 @@ export const Navigation = (props) => {
               <li>
                 <a
                   className="menu-link"
-                  href={`https://backoffice.besanaglobal.com/register?sponsor=${!!sponsor ? sponsor : null}`}
+                  href={`https://backoffice.besanaglobal.com/register?sponsor=${state.user.sponsor}`}
                 >
                   {t("Navbar.JoinUs")}
                 </a>
               </li>
               {
                 <li>
-                  <a href={`/shoppingCar?sponsor=${!!sponsor ? sponsor : null}`}>
+                  <a href={`/shoppingCar?sponsor=${state.user.sponsor}`}>
                     <>
                       {" "}
                       {cart?.length > 0 && (
@@ -259,15 +264,15 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a
+              {/* <a
                 className="menu-link"
-                href={`https://backoffice.besanaglobal.com/sign-up?sponsor=${!!sponsor ? sponsor : null}`}
+                href={`https://backoffice.besanaglobal.com/sign-up?sponsor=${!!sponsor.data.data ? sponsor.data.data : null}`}
               >
                 {t("Navbar.JoinUs")}
-              </a>
+              </a> */}
             </li>
             <li>
-                <a href={`/shoppingCar?sponsor=${!!sponsor ? sponsor : null}`}>
+                <a href={`/shoppingCar?sponsor=${!!state.user.sponsor ? state.user.sponsor : null}`}>
                   <>
                     {cart?.length > 0 && (
                       <div className="bubbler-car">{cart?.length}</div>

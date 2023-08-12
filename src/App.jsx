@@ -6,6 +6,7 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import { userStore } from "./store/userStore";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,

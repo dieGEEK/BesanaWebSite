@@ -32,7 +32,6 @@ export const Image = ({
   };
   const lenguage=window.localStorage.getItem('country')??'USA'
   const curren=window.localStorage.getItem('currency')??'USD'
-  console.log(curren)
   let convertir=0;
  
   switch (lenguage) {

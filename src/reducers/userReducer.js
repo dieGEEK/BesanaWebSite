@@ -1,7 +1,7 @@
 import { ADD_SPONSOR_CODE } from "../types";
 
 export const initialState = {
-  sponsor: "",
+  sponsor: 'no'
 };
 
 export function userReducer(state = initialState, action) {
