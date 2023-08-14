@@ -32,13 +32,21 @@ const optionsList = [
 ]
 
 export const Navigation = (props) => {
+  var sponsorNavigation = '';
   const isSmallDevice = window.innerWidth < 900;
   const [menuSmallDeviceVisible, setMenuSmallDeviceVisible] = useState(false);
   const { t, i18n } = useTranslation();
   const state = useSelector((state) => state);
   console.log("state")
-  console.log(state.user.sponsor)
-  
+  const type = typeof state.user.sponsor
+
+  console.log(state.user.sponsor.data.data)
+  if (type=='object') {
+    sponsorNavigation= state.user.sponsor.data.data
+  }
+
+  console.log('nuevo dato sponsor')
+  console.log(sponsorNavigation)
 
    const { shopping: { cart }, user } = state;
    const { sponsor }=user;
@@ -176,14 +184,14 @@ export const Navigation = (props) => {
               <li>
                 <a
                   className="menu-link"
-                  href={`https://backoffice.besanaglobal.com/register?sponsor=${state.user.sponsor}`}
+                  href={`https://backoffice.besanaglobal.com/register?sponsor=${sponsorNavigation}`}
                 >
                   {t("Navbar.JoinUs")}
                 </a>
               </li>
               {
                 <li>
-                  <a href={`/shoppingCar?sponsor=${state.user.sponsor}`}>
+                  <a href={`/shoppingCar?sponsor=${sponsorNavigation}`}>
                     <>
                       {" "}
                       {cart?.length > 0 && (
@@ -272,7 +280,7 @@ export const Navigation = (props) => {
               </a> */}
             </li>
             <li>
-                <a href={`/shoppingCar?sponsor=${!!state.user.sponsor ? state.user.sponsor : null}`}>
+                <a href={`/shoppingCar?sponsor=${!!sponsorNavigation ? sponsorNavigation : null}`}>
                   <>
                     {cart?.length > 0 && (
                       <div className="bubbler-car">{cart?.length}</div>
