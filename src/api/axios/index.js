@@ -16,7 +16,6 @@ export const AxiosGet = async (url, params = {}) => {
       rejectUnauthorized: false
     });
 
-    console.log(result)
    
     return result.data;
   } catch (e) {

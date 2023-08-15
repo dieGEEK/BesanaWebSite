@@ -37,16 +37,14 @@ export const Navigation = (props) => {
   const [menuSmallDeviceVisible, setMenuSmallDeviceVisible] = useState(false);
   const { t, i18n } = useTranslation();
   const state = useSelector((state) => state);
-  console.log("state")
   const type = typeof state.user.sponsor
 
-  console.log(state.user.sponsor.data.data)
   if (type=='object') {
     sponsorNavigation= state.user.sponsor.data.data
   }
 
-  console.log('nuevo dato sponsor')
-  console.log(sponsorNavigation)
+  // console.log('nuevo dato sponsor')
+  // console.log(sponsorNavigation)
 
    const { shopping: { cart }, user } = state;
    const { sponsor }=user;
